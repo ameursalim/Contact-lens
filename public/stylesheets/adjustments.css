@@ -5,3 +5,7 @@
 .navbar-end {
 	margin: 0;
 }
+
+.card-image .image.is-128x128 {
+	margin: auto;
+}
