@@ -11,7 +11,7 @@ const users = [{
     adresse:"22 rue victor hugo",
     telephone:06434564355,
     info: {
-        id_ContactLens:"5f71c0b41fcaf83429c7978b",
+        id_ContactLens:"5f71e18d5012573705280eb1",
         frequency:"daily",
         reminder:Date.now(),
         delivered:true,
@@ -33,8 +33,8 @@ const users = [{
         adresse:"22 rue GAMBETTA",
         telephone:065357376575,
         info: {
-            id_ContactLens:"5f71c0b41fcaf83429c7978b",
-            frequency:"montly",
+            id_ContactLens:"5f71e18d5012573705280eb1",
+            frequency:"monthly",
             reminder: Date.now() ,
             delivered: false,
             carteVital:"carte",

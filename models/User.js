@@ -7,11 +7,11 @@ const userSchema = new Schema({
   password: String,
   role: { type: String, enum: ["admin", "user"], default: "user" },
   avatar: String,
-  adresse: String,
+  addresse: String,
   telephone: Number,
   info: {
 	id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
-	frequency : {enum :["daily","weekly","monthly"]},
+	frequency : {type:String, enum :["daily","weekly","monthly"], default: "daily"},
 	reminder : Date,
 	delivered : Boolean,
 	carteVital: String,

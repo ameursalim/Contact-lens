@@ -1,7 +1,76 @@
 <h1>orders</h1>
-<div>
-	<div></div>
-	<div>
-		
+<div class="columns">
+	<div class="column">
+		<img src="" alt="">
+	</div>
+	<div class="column">
+		<form class="form-horizontal" >
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Client</legend>
+
+			<!-- Select Basic -->
+			<div class="field">
+			<label class="label" for="lens">Select lens</label>
+			<div class="control">
+				<div class="select">
+					<select id="lens" name="lens" class="">
+					<option>Acuvue</option>
+					<option>Dailies</option>
+					</select>
+				</div>
+			</div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="field">
+			<label class="label" for="frequency">What frequency?</label>
+			<div class="control">
+				<div class="select">
+					<select id="frequency" name="frequency" class="">
+					<option>Daily</option>
+					<option>Weekly</option>
+					<option>Monthly</option>
+					</select>
+				</div>
+			</div>
+			</div>
+
+			<!-- Multiple Radios -->
+			<div class="field">
+			<label class="label" for="delivery">Home delivery?</label>
+			<div class="control">
+				<label class="radio" for="delivery-0">
+				<input type="radio" name="delivery" id="delivery-0" value="Yes, please" checked="checked">
+				Yes, please
+				</label>
+				<label class="radio" for="delivery-1">
+				<input type="radio" name="delivery" id="delivery-1" value="No thanks, I'll come pick it up!">
+				No thanks, I'll come pick it up!
+				</label>
+			</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="field">
+			<label class="label" for="address">Delivery address</label>
+			<div class="control">
+				<input id="address" name="address" type="text" placeholder="10 Madison av NY" class="input ">
+				
+			</div>
+			</div>
+
+			<!-- Button -->
+			<div class="field">
+			<label class="label" for="edit">Save</label>
+			<div class="control">
+				<button id="edit" name="edit" class="button is-primary">Save</button>
+			</div>
+			</div>
+
+			</fieldset>
+		</form>
 	</div>
 </div>
+
