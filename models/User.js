@@ -14,7 +14,7 @@ const userSchema = new Schema({
 	frequency : {enum :["daily","weekly","montly"]},
 	reminder : Date,
 	delivered : Boolean,
-	carte_vital: String,
+	carteVital: String,
 	mutuelle : String,
 	ordonnance: String,
 
@@ -25,21 +25,3 @@ const userSchema = new Schema({
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
-
-/*
-email
-password
-firstName
-lastName
-adresse
-telephone
-info: {
-	id-lenses
-	frequency : enum
-	reminder
-	delivered: true false
-	carte vitale: cloudinary
-	mutuelle: cloudinary
-	ordonnance: cloudinary
-}
-*/
