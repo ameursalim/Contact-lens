@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 const LensSchema = new Schema({
 	img:String,
-	brand:String
+	brand:String,
+	description:String
 })
 
 const Lens = mongoose.model('Lens', LensSchema)
