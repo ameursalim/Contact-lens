@@ -10,6 +10,10 @@ router.get("/lenses", async (req, res, next) => {
 });
 
 
+router.get("/addProduct", async (req, res, next) => {
+  res.render("admin/addProduct");
+});
+
 
 
 module.exports = router;
