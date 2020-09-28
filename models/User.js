@@ -24,21 +24,3 @@ const userSchema = new Schema({
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
-
-/*
-email
-password
-firstName
-lastName
-adresse
-telephone
-info: {
-	id-lenses
-	frequency : enum
-	reminder
-	delivered: true false
-	carte vitale: cloudinary
-	mutuelle: cloudinary
-	ordonnance: cloudinary
-}
-*/

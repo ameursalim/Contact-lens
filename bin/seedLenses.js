@@ -1,23 +1,20 @@
 require("dotenv").config();
-const lens = require("../models/Lenses");
+const lens = require("../models/Lens");
 const mongoose = require("mongoose");
 
 const lenses = [{
 		img:"jn",
 		brand:"nkn"
 	},
-    {
-        title: 'The Strangers: Prey at Night',
-        genre: 'drama',
-        plot: 'a plot twist!'
-
-    },
-    {
-        title: 'The Hurricane Heist',
-        genre: 'horror',
-        plot: 'i will not spoil'
-
-    }
+	{
+		img:"btgrhn",
+		brand:"rtrkn"
+	},
+	{
+		img:"grfn",
+		brand:"lknhbjn"
+	}
+ 
 ];
 
 mongoose
