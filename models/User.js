@@ -1,8 +1,8 @@
 /*
 email
 password
-first name
-last name
+firstName
+lastName
 adresse
 telephone
 info: {
