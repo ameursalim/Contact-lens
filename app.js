@@ -42,12 +42,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 //custom middleware
 app.use(require("./middlewares/exposeLoginStatus"));
 
-
 //routes
 app.use('/', require('./routes/index'))
 app.use('/user', require('./routes/user'));
 app.use("/auth", require("./routes/auth"));
-
+app.use("/admin", require("./routes/admin"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
