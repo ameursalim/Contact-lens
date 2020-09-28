@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 
 const lenses = [{
 		img:"jn",
-		brand:"nkn"
+        brand:"nkn",
+        description:"sqfdsdfsqdfqsdfsdf"
 	},
 	{
 		img:"btgrhn",
