@@ -8,17 +8,18 @@ body {
 a {
   color: #00B7FF;
 }
-
+/* 
 .signform {
-text-align: center;
+
 
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-top: 10%;
+margin-top: 15%;
 }
+ */
 
-.field{
-  width: 50vw;
-}
+ .section{
+   margin-top: 15%;
+ }

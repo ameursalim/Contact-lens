@@ -9,4 +9,7 @@ router.get("/lenses", async (req, res, next) => {
   res.render("admin/lenses");
 });
 
+
+
+
 module.exports = router;
