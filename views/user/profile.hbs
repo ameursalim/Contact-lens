@@ -1,66 +1,126 @@
+<section class="section">
 <div class="columns">
-	<div class="column p-3">
-		<div class="card">
-		<div class="card-image">
-			<figure class="image is-128x128">
-				<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-			</figure>
-		</div>
-		<div class="card-content">
-			<div class="content">
-				<form class="form-horizontal" >
-					<fieldset>
-					<!-- Text input-->
-					<div class="field">
-					<label class="label" for="username"></label>
-					<div class="control">
-						<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large">
-						
-					</div>
-					</div>
+	<div class="column"></div>
+	<div class="column is-two-fifths">
+			<div class="box">
+				<button class="button is-warning is-pulled-right">
+					<span class="icon">
+						<i class="far fa-edit"></i>
+					</span>
+				</button>
+				<div class="card-image">
+					<figure class="image is-128x128">
+						<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+					</figure>
+				</div>
+				<div class="card-content">
+				<div class="content">
+					<form class="form-horizontal" >
+						<fieldset>
+						<!-- Text input-->
+						<div class="field">
+						<label class="label" for="username"></label>
+						<div class="control">
+							<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large">
+							
+						</div>
+						</div>
 
-					<!-- Text input-->
-					<div class="field">
-					<label class="label" for="email">email</label>
-					<div class="control">
-						<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input ">
-						
-					</div>
-					</div>
+						<!-- Text input-->
+						<div class="field">
+						<label class="label" for="email">email</label>
+						<div class="control">
+							<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input ">
+							
+						</div>
+						</div>
 
-					<!-- Text input-->
-					<div class="field">
-					<label class="label" for="telephone">your number</label>
-					<div class="control">
-						<input id="telephone" name="telephone" type="text" placeholder="0607080910" class="input ">
-						
-					</div>
-					</div>
+						<!-- Text input-->
+						<div class="field">
+						<label class="label" for="telephone">your number</label>
+						<div class="control">
+							<input id="telephone" name="telephone" type="text" placeholder="0607080910" class="input ">
+							
+						</div>
+						</div>
 
-					<!-- Text input-->
-					<div class="field">
-					<label class="label" for="address">your address</label>
-					<div class="control">
-						<input id="address" name="address" type="text" placeholder="15 wintefall wall NY" class="input ">
-						
-					</div>
-					</div>
+						<!-- Text input-->
+						<div class="field">
+						<label class="label" for="address">your address</label>
+						<div class="control">
+							<input id="address" name="address" type="text" placeholder="15 wintefall wall NY" class="input ">
+							
+						</div>
+						</div>
 
-					<!-- Button (Double) -->
-					<div class="field">
-					<label class="label" for="edit"></label>
-					<div class="control">
-						<button id="edit" name="edit" class="button is-primary">Save</button>
-						<button id="discard" name="discard" class="button is-warning">Discard changes</button>
-					</div>
-					</div>
+						<!-- Button (Double) -->
+						<div class="field">
+						<label class="label" for="edit"></label>
+						<div class="control">
+							<button id="edit" name="edit" class="button is-primary">Save</button>
+							<button id="discard" name="discard" class="button is-warning">Discard changes</button>
+						</div>
+						</div>
 
-					</fieldset>
-				</form>
+						</fieldset>
+					</form>
 
+				</div>
+				</div>
 			</div>
-		</div>
-		</div>
+	</div>
+	<div class="column"></div>
+	<div class="column is-two-fifths">
+		<form class="form-horizontal" enctype="multipart/form-data">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Information for the Optician</legend>
+
+			<!-- Text input-->
+			<div class="field">
+			<label class="label" for="carteVitale">your carte Vitale</label>
+			<div class="control">
+				<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input ">
+				
+			</div>
+			</div>
+
+			<!-- File Button --> 
+
+			<label class="label" for="mutuelle">upload your mutuelle</label>
+			<div class="file">
+			<label class="file-label">
+				<input class="file-input" type="file" name="mutuelle" onchange="if (this.files.length > 0) document.getElementById('filename-mutuelle').innerHTML = this.files[0].name;">
+				<span class="file-cta">
+				<span class="file-icon">
+					<i class="fa fa-upload"></i>
+				</span>
+				<span class="file-label" id="filename-mutuelle">
+					Choose a file…
+				</span>
+				</span>
+			</label>
+			</div>
+			<!-- File Button --> 
+
+			<label class="label" for="ordonnance">upload your ordonnance</label>
+			<div class="file">
+			<label class="file-label">
+				<input class="file-input" type="file" name="ordonnance" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
+				<span class="file-cta">
+				<span class="file-icon">
+					<i class="fa fa-upload"></i>
+				</span>
+				<span class="file-label" id="filename-ordonnance">
+					Choose a file…
+				</span>
+				</span>
+			</label>
+			</div>
+			</fieldset>
+		</form>
 	</div>
 	<div class="column"></div>
 </div>
+</section>
