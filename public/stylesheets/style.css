@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -20,8 +20,4 @@ margin-top: 15%;
 
  .section{
    margin-top: 15%;
- }
-
- .navbar-start {
-   margin: auto;
  }
