@@ -21,7 +21,7 @@ const lenses = [{
 ];
 
 mongoose
-    .connect(process.env.URI, {
+    .connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

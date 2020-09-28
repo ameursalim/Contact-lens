@@ -14,10 +14,9 @@ const userSchema = new Schema({
 	frequency : {enum :["daily","weekly","montly"]},
 	reminder : Date,
 	delivered : Boolean,
-	carte_vital: String,
+	carteVital: String,
 	mutuelle : String,
 	ordonnance: String,
-
 	
 },
 })
