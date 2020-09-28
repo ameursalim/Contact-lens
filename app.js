@@ -7,8 +7,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const session = require("express-session");
 const mongoose = require("mongoose")
 var app = express();
@@ -41,11 +39,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//custom middleware
+app.use(require("./middlewares/exposeLoginStatus"));
 
+
+//routes
+app.use('/', require('./routes/index'))
+app.use('/user', require('./routes/user'));
 app.use("/auth", require("./routes/auth"));
-
 
 
 // catch 404 and forward to error handler
@@ -66,5 +67,3 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-//custom middleware
-app.use(require("./middlewares/exposeLoginStatus"));
