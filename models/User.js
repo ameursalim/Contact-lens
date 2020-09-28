@@ -10,15 +10,14 @@ const userSchema = new Schema({
   addresse: String,
   telephone: Number,
   info: {
-	id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
-	frequency : {type: String, enum :["daily","weekly","montly"]},
-	reminder : Date,
-	delivered : Boolean,
-	carteVital: String,
-	mutuelle : String,
-	ordonnance: String,
-	
-},
+    id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
+    frequency : {type:String, enum :["daily","weekly","monthly"], default: "daily"},
+    reminder : Date,
+    delivered : Boolean,
+    carteVital: String,
+    mutuelle : String,
+    ordonnance: String,
+  },
 })
 
 const User = mongoose.model("User", userSchema);
