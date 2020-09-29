@@ -7,7 +7,7 @@ const userSchema = new Schema({
   password: String,
   role: { type: String, enum: ["admin", "user"], default: "user" },
   avatar: String,
-  addresse: String,
+  address: String,
   telephone: Number,
   info: {
     id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
