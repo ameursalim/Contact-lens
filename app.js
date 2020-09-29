@@ -1,6 +1,6 @@
 require("dotenv").config();
 require("./config/dbConnection"); // database initial setup
-// require("./helpers/hbs"); // utils for hbs templates
+require("./helpers/hbs-helpers.js"); // utils for hbs templates
 
 var createError = require('http-errors');
 var express = require('express');
@@ -12,6 +12,7 @@ const mongoose = require("mongoose")
 var app = express();
 const hbs = require('hbs')
 const MongoStore = require("connect-mongo")(session);
+const User = require('./models/User')
 
 //session setup
 // SESSION SETUP

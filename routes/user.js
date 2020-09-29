@@ -11,11 +11,10 @@ router.get('/profile', async function(req, res, next) {
 });
 
 router.get('/orders', async function(req, res, next) {
-  const user = await User.findOne({username:'FOO'}).populate("info.id_ContactLens")
+  const user = await User.findOne({username:req.session.currentUser.username}).populate("info.id_ContactLens") 
+  const lenses = await Lens.find()
 
-  const lens = await Lens.find({_id: user.info.id_ContactLens}) 
-  console.log(user)
-  res.render('user/orders', { user, lens: lens[0], js: ['btnEdit'] });
+  res.render('user/orders', { user, lenses, js: ['btnEdit'] });
 });
 
 module.exports = router;

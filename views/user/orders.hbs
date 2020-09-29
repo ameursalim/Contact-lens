@@ -1,7 +1,7 @@
 <section class="section">
 	<div class="columns">
 		<div class="column">
-			<img src="{{lens.img}}" alt="acuvue box">
+			<img src="{{user.info.id_ContactLens.img}}" alt="acuvue box">
 		</div>
 		<div class="column">
 			<button id="show" class="button is-warning is-pulled-right">
@@ -18,9 +18,15 @@
 				<label class="label" for="lens">Select lens</label>
 				<div class="control">
 					<div class="select">
-						<select id="lens" name="lens" class="">
-							<option>Acuvue</option>
-							<option>Dailies</option>
+						<select id="lens" name="lens" class="selection">
+							{{#each lenses}}
+								{{#areTheSame this.id ../user.info.id_ContactLens.img}}
+							<option value="{{this._id}}" selected>{{this.brand}}</option>
+								{{else}}
+							<option value="{{this._id}}">{{this.brand}}</option>
+								{{/areTheSame}}
+							{{/each}}
+							{{!-- <option value="{{user.info.id_ContactLens._id}}" selected>{{user.info.id_ContactLens.brand}}</option> --}}
 						</select>
 					</div>
 				</div>
