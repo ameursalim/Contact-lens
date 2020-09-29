@@ -15,7 +15,7 @@
 				</div>
 				<div class="card-content">
 				<div class="content">
-					<form class="form-horizontal" >
+					<form class="form-horizontal"  method="POST">
 						<fieldset>
 						<!-- Text input-->
 						<div class="field">
@@ -57,8 +57,8 @@
 						<div id="double" class="field">
 						<label class="label" for="edit"></label>
 						<div class="control">
-							<button id="edit" name="edit" class="button is-primary">Save</button>
-							<button id="discard" name="discard" class="button is-warning">Discard changes</button>
+							<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
+							<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/user/profile">Discard changes</button>
 						</div>
 						</div>
 

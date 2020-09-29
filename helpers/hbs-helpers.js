@@ -1,4 +1,5 @@
 const hbs = require("hbs")
+const dayjs = require('dayjs')
 
 hbs.registerHelper('areTheSame', function (val1, val2, options){
 	if (val1.toString() === val2.toString()) {
@@ -7,3 +8,11 @@ hbs.registerHelper('areTheSame', function (val1, val2, options){
 		return options.inverse(this)
 	}  
 })
+
+hbs.registerHelper("formatDateInput", function (date) {
+	return dayjs(date).format("YYYY-MM-DD");
+});
+
+hbs.registerHelper("formatDate", function (date) {
+	return dayjs(date).format("DD/MM/YYYY");
+});

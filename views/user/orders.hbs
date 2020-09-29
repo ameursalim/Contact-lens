@@ -9,7 +9,7 @@
 						<i class="far fa-edit"></i>
 					</span>
 			</button>
-			<form class="form-horizontal" >
+			<form class="form-horizontal" method="POST">
 				<fieldset>
 
 
@@ -20,13 +20,12 @@
 					<div class="select">
 						<select id="lens" name="lens" class="selection">
 							{{#each lenses}}
-								{{#areTheSame this.id ../user.info.id_ContactLens.img}}
+								{{#areTheSame this.id ../user.info.id_ContactLens._id}}
 							<option value="{{this._id}}" selected>{{this.brand}}</option>
 								{{else}}
 							<option value="{{this._id}}">{{this.brand}}</option>
 								{{/areTheSame}}
 							{{/each}}
-							{{!-- <option value="{{user.info.id_ContactLens._id}}" selected>{{user.info.id_ContactLens.brand}}</option> --}}
 						</select>
 					</div>
 				</div>
@@ -38,9 +37,9 @@
 				<div class="control">
 					<div class="select">
 						<select id="frequency" name="frequency" class="">
-						<option>Daily</option>
-						<option>Weekly</option>
-						<option>Monthly</option>
+						{{#each frequency}}
+						<option>{{this}}</option>
+						{{/each}}
 						</select>
 					</div>
 				</div>
@@ -50,7 +49,7 @@
 				<div class="field">
 				<label class="label" for="remainder">Change reminder</label>
 				<div class="control">
-					<input id="reminder" name="remainder" type="date" class="input " readonly="true">
+					<input id="reminder" name="reminder" type="date" class="input " readonly="true" value="{{#formatDateInput user.info.reminder}}{{/formatDateInput}}">
 				</div>
 				</div>
 
@@ -60,11 +59,26 @@
 				<label class="label" for="delivery">Home delivery?</label>
 				<div class="control">
 					<label class="radio" for="delivery-0">
-					<input type="radio" name="delivery" id="delivery-0" value="true" checked="checked">
+					<input 
+						type="radio" 
+						name="delivery" 
+						id="delivery-0" 
+						value="true" 
+						{{#if user.info.delivered}}
+						checked="checked"
+						{{/if}}
+					>
 					Yes, please
 					</label>
 					<label class="radio" for="delivery-1">
-					<input type="radio" name="delivery" id="delivery-1" value="false">
+					<input 
+						type="radio" 
+						name="delivery" 
+						id="delivery-1" 
+						value="false"
+						{{#unless user.info.delivered}}
+						checked="checked"
+						{{/unless}}>
 					No thanks, I'll come pick it up!
 					</label>
 				</div>
@@ -83,8 +97,8 @@
 				<div id="double" class="field">
 				<label class="label" for="edit"></label>
 				<div class="control">
-					<button id="edit" name="edit" class="button is-primary">Save</button>
-					<button id="discard" name="discard" class="button is-warning">Discard changes</button>
+					<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
+					<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/user/orders">Discard changes</button>
 				</div>
 				</div>
 
