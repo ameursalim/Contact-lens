@@ -9,3 +9,12 @@
 .card-image .image.is-128x128 {
 	margin: auto;
 }
+
+input:read-only {
+	border: none;
+	color:black;
+}
+
+#show {
+	z-index: 50;
+}
