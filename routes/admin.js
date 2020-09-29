@@ -14,6 +14,9 @@ router.get("/addProduct", async (req, res, next) => {
   res.render("admin/addProduct");
 });
 
+router.get("/editProduct", async (req, res, next) => {
+  res.render("admin/editProduct");
+});
 
 
 module.exports = router;

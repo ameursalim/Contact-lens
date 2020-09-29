@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const LensSchema = new Schema({
 	img:String,
 	brand:String,
+	reference:String,
 	description:String
 })
 
