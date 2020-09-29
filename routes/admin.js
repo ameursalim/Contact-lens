@@ -10,13 +10,23 @@ router.get("/lenses", async (req, res, next) => {
   res.render("admin/lenses");
 });
 
+router.get("/lenses", async(req, res, next) => {
+  try {
+    const lenses = await Lens.find();
+    res.render("lenses", {lenses});
+  }
+  catch(error) {
+    next(error);
+  }
+});
+
 
 router.get("/addProduct", async (req, res, next) => {
   try{
-  const lensDocuments = await Lens.find();
+  const lenses = await Lens.find();
   
   res.render("admin/addProduct", {
-    lenses: lensDocuments,
+    lenses: lenses,
   });
 } catch (error) {
   next(error);
@@ -28,7 +38,7 @@ router.post("/addProduct", async (req, res, next) => {
     console.log(req.body);
   try {
     const newLens = req.body;
-    const createdNewLens = await Lens.create(newLens);
+    const createNewLens = await Lens.create(newLens);
     res.redirect("/admin/lenses");
   } catch (error) {
     next(error);

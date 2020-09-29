@@ -9,7 +9,7 @@
 	  <div class="container">
 		<div class="tile is-ancestor">
 			
-        <form class="form" action="/admin/lenses" method="GET"></form>
+        <form class="form" action="/admin/addProduct" method="GET"></form>
 
             <div class="tile is-parent">
 				<div class="card">
@@ -20,6 +20,11 @@
 						</figure>
                          
 					</div>
+
+                    {{!-- content --}}
+
+ 
+
 					<div class="card-content">
 						<div class="media">
 							<div class="media-left">
@@ -28,17 +33,18 @@
 								</figure>
 							</div>
 							<div class="media-content"> 
-                                <label for="title">
-                                    <p class="title is-4">ACUVUE</p>
-                                    </label>
-								
-						
+                                <label id="brand" name="brand" for="brand"> </label>
+                                <input id="brand" name="brand" type="text" placeholder="John Snow" class="input is-large" readonly="true" >
 							</div>
 						</div>
-
-						<div class="content">qdsqsdfqsdfqsdfqsdfsqdfsdfsqdfsdfe <br>
-                        qsdfqsdfqsdfqsdfsqdfsqdffs</div>
+                          
+                           <label id="description" for="description"></label>
+                           <input id="description" name="description" type="text" placeholder="John Snow" class="input is-large" readonly="true" >
+						<div class="content">{{Lens.description}}</div>
 					</div>
+             
+
+
 					 <footer class="card-footer">
 					    <a href="/admin/editProduct" class="card-footer-item">edit</a>
 						 <a href="" class="card-footer-item">delete</a>
