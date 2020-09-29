@@ -2,19 +2,35 @@
   <div class="container has-text-centered">
     <div class="columns is-centered">
       <div class="column is-5 is-4-desktop">
-        <form>
+        <form method="post" action="/auth/signup" method="post" id="form_user">
+          
+          
           <div class="field">
             <div class="control">
-              <input class="input" type="email" placeholder="Email">
+              
+              <input id="username"class="input" type="text" placeholder="username">
             </div>
           </div>
+          
           <div class="field">
             <div class="control">
-              <input class="input" type="password" placeholder="Password">
+              <input id="email" type="email" class="input-text input" placeholder="albert.biceps@gmail.com" name="email"
+        required value="batman@bale.com">
             </div>
           </div>
+          
+         
+
           <div class="field">
-            <button class="button is-primary is-fullwidth">Sign in!</button>
+            <div class="control">
+              <input id="password" type="password" class="input-text input" placeholder="••••••" name="password" required
+        value="1234">
+            </div>
+          </div>
+         
+         
+          <div class="field">
+            <button class="button is-primary is-fullwidth">Sign Up!</button>
           </div>
      
         </form>
