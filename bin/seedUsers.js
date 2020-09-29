@@ -65,21 +65,3 @@ mongoose
         console.log(error);
     });
 
-//     username: String,
-//     email: { type: String, unique: true },
-//     password: String,
-//     role: { type: String, enum: ["admin", "user"], default: "user" },
-//     avatar: String,
-//     adresse: String,
-//     telephone: Number,
-//     info: {
-//       id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
-//       frequency : {enum :["daily","weekly","montly"]},
-//       reminder : Date,
-//       delivered : Boolean,
-//       carteVital: String,
-//       mutuelle : String,
-//       ordonnance: String,
-      
-//   },
-//   })
