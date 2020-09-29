@@ -9,7 +9,7 @@
 						<i class="far fa-edit"></i>
 					</span>
 			</button>
-			<form class="form-horizontal" method="POST">
+			<form class="form-horizontal" method="POST" action="/user/edit/{{user._id}}">
 				<fieldset>
 
 
@@ -18,7 +18,7 @@
 				<label class="label" for="lens">Select lens</label>
 				<div class="control">
 					<div class="select">
-						<select id="lens" name="lens" class="selection">
+						<select id="lens" name="info.id_ContactLens" class="selection">
 							{{#each lenses}}
 								{{#areTheSame this.id ../user.info.id_ContactLens._id}}
 							<option value="{{this._id}}" selected>{{this.brand}}</option>
@@ -36,9 +36,16 @@
 				<label class="label" for="frequency">What frequency?</label>
 				<div class="control">
 					<div class="select">
-						<select id="frequency" name="frequency" class="">
+						<select id="frequency" name="info.frequency" class="">
 						{{#each frequency}}
-						<option>{{this}}</option>
+						<option 
+							value="{{this}}"
+							{{#areTheSame this ../user.info.frequency}}
+							selected="true"
+							{{else}}
+							selected="false"
+							{{/areTheSame}}
+							>{{this}}</option>
 						{{/each}}
 						</select>
 					</div>
@@ -49,7 +56,7 @@
 				<div class="field">
 				<label class="label" for="remainder">Change reminder</label>
 				<div class="control">
-					<input id="reminder" name="reminder" type="date" class="input " readonly="true" value="{{#formatDateInput user.info.reminder}}{{/formatDateInput}}">
+					<input id="reminder" name="info.reminder" type="date" class="input " readonly="true" value="{{#formatDateInput user.info.reminder}}{{/formatDateInput}}">
 				</div>
 				</div>
 
@@ -61,7 +68,7 @@
 					<label class="radio" for="delivery-0">
 					<input 
 						type="radio" 
-						name="delivery" 
+						name="info.delivered" 
 						id="delivery-0" 
 						value="true" 
 						{{#if user.info.delivered}}
@@ -73,7 +80,7 @@
 					<label class="radio" for="delivery-1">
 					<input 
 						type="radio" 
-						name="delivery" 
+						name="info.delivered" 
 						id="delivery-1" 
 						value="false"
 						{{#unless user.info.delivered}}

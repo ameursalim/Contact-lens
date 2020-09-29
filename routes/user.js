@@ -29,5 +29,12 @@ router.get('/orders', async function(req, res, next) {
     });
 });
 
+
+router.post('/edit/:id', async (req, res, next) => {
+  console.log(req.params.id, req.body)
+  const user = await User.findByIdAndUpdate(req.params.id, req.body)
+  res.redirect('/user/profile')
+})
+
 module.exports = router;
 
