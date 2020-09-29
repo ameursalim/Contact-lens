@@ -11,7 +11,7 @@ const userSchema = new Schema({
   telephone: Number,
   info: {
     id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
-    frequency : {type:String, enum :["daily","weekly","monthly"], default: "daily"},
+    frequency : {type:String, enum :["daily","weekly","monthly"]},
     reminder : Date,
     delivered : Boolean,
     carteVitale: String,

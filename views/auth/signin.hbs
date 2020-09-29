@@ -2,6 +2,11 @@
   <div class="container has-text-centered">
     <div class="columns is-centered">
       <div class="column is-5 is-4-desktop">
+
+
+              {{#if msg}}
+  <p class="message {{msg.status}}">{{msg.text}}</p>
+  {{/if}}
         <form method="post" action="/auth/signin" method="post" id="form_user">
 
 
