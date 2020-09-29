@@ -28,6 +28,20 @@ app.use(
   })
 );
 
+if(process.env.DEV_MODE){
+
+  app.use(async (req,res,next) => {
+    if(process.env.ADMIN_USER){
+      const user = await User.findOne({role: "admin"});
+      req.session.currentUser = user;
+    }else {
+      const user = await User.findOne({role: "user"});
+      req.session.currentUser = user;
+    }
+    next()
+  })
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
