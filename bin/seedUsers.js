@@ -15,7 +15,7 @@ const users = [{
         frequency:"daily",
         reminder:Date.now(),
         delivered:true,
-        carteVital:"carte",
+        carteVitale:"1825652867463546",
         mutuelle : "Cloudinary",
         ordonnance: "Cloudinary",
 
@@ -30,14 +30,14 @@ const users = [{
         email:"baz@gmail.com",
         password:"1236456565",
         role:"admin",
-        adresse:"22 rue GAMBETTA",
+        address:"22 rue GAMBETTA",
         telephone:065357376575,
         info: {
             id_ContactLens:"5f71e18d5012573705280eb1",
             frequency:"monthly",
             reminder: Date.now() ,
             delivered: false,
-            carteVital:"carte",
+            carteVitale:"182565286752637149863",
             mutuelle : "Cloudinary",
             ordonnance: "Cloudinary",
     

@@ -12,7 +12,8 @@
 
 input:read-only {
 	border: none;
-	color:black;
+	padding: 0;
+	color: #363636;
 }
 
 #show {
