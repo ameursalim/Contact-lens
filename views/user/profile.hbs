@@ -3,7 +3,7 @@
 	<div class="column"></div>
 	<div class="column is-two-fifths">
 			<div class="box">
-				<button class="button is-warning is-pulled-right">
+				<button id="show" class="button is-warning is-pulled-right">
 					<span class="icon">
 						<i class="far fa-edit"></i>
 					</span>
@@ -21,40 +21,40 @@
 						<div class="field">
 						<label class="label" for="username"></label>
 						<div class="control">
-							<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large">
+							<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large" readonly="true" value="{{user.username}}">
 							
 						</div>
 						</div>
 
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="email">email</label>
+						<label class="label" for="email">email :</label>
 						<div class="control">
-							<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input ">
+							<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input" readonly="true" value="{{user.email}}">
 							
 						</div>
 						</div>
 
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="telephone">your number</label>
+						<label class="label" for="telephone">your number :</label>
 						<div class="control">
-							<input id="telephone" name="telephone" type="text" placeholder="0607080910" class="input ">
+							<input id="telephone" name="telephone" type="text" placeholder="0607080910" class="input" readonly="true" value="{{user.telephone}}">
 							
 						</div>
 						</div>
 
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="address">your address</label>
+						<label class="label" for="address">your address :</label>
 						<div class="control">
-							<input id="address" name="address" type="text" placeholder="15 wintefall wall NY" class="input ">
+							<input id="address" name="address" type="text" placeholder="15 wintefall wall NY" class="input" readonly="true" value="{{user.address}}">
 							
 						</div>
 						</div>
 
 						<!-- Button (Double) -->
-						<div class="field">
+						<div id="double" class="field">
 						<label class="label" for="edit"></label>
 						<div class="control">
 							<button id="edit" name="edit" class="button is-primary">Save</button>
@@ -81,8 +81,7 @@
 			<div class="field">
 			<label class="label" for="carteVitale">your carte Vitale</label>
 			<div class="control">
-				<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input ">
-				
+				<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input " value="{{user.info.carteVitale}}" readonly="true">
 			</div>
 			</div>
 

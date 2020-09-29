@@ -1,10 +1,10 @@
 <section class="section">
 	<div class="columns">
 		<div class="column">
-			<img src="https://www.eueyewear.com/media/catalog/product/cache/10/image/9df78eab33525d08d6e5fb8d27136e95/a/c/acuvue-oasys-6.jpg" alt="acuvue box">
+			<img src="{{lens.img}}" alt="acuvue box">
 		</div>
 		<div class="column">
-			<button class="button is-warning is-pulled-right">
+			<button id="show" class="button is-warning is-pulled-right">
 					<span class="icon">
 						<i class="far fa-edit"></i>
 					</span>
@@ -12,8 +12,6 @@
 			<form class="form-horizontal" >
 				<fieldset>
 
-				<!-- Form Name -->
-				<legend>Client</legend>
 
 				<!-- Select Basic -->
 				<div class="field">
@@ -46,7 +44,7 @@
 				<div class="field">
 				<label class="label" for="remainder">Change reminder</label>
 				<div class="control">
-					<input id="reminder" name="remainder" type="date" class="input ">
+					<input id="reminder" name="remainder" type="date" class="input " readonly="true">
 				</div>
 				</div>
 
@@ -56,11 +54,11 @@
 				<label class="label" for="delivery">Home delivery?</label>
 				<div class="control">
 					<label class="radio" for="delivery-0">
-					<input type="radio" name="delivery" id="delivery-0" value="Yes, please" checked="checked">
+					<input type="radio" name="delivery" id="delivery-0" value="true" checked="checked">
 					Yes, please
 					</label>
 					<label class="radio" for="delivery-1">
-					<input type="radio" name="delivery" id="delivery-1" value="No thanks, I'll come pick it up!">
+					<input type="radio" name="delivery" id="delivery-1" value="false">
 					No thanks, I'll come pick it up!
 					</label>
 				</div>
@@ -70,13 +68,13 @@
 				<div class="field">
 				<label class="label" for="address">Delivery address</label>
 				<div class="control">
-					<input id="address" name="address" type="text" placeholder="10 Madison av NY" class="input ">
+					<input id="address" name="address" type="text" placeholder="10 Madison av NY" class="input " readonly="true" value="{{user.address}}">
 					
 				</div>
 				</div>
 
 				<!-- Button (Double) -->
-				<div class="field">
+				<div id="double" class="field">
 				<label class="label" for="edit"></label>
 				<div class="control">
 					<button id="edit" name="edit" class="button is-primary">Save</button>
