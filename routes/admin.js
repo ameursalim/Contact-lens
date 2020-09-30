@@ -1,10 +1,9 @@
 const express = require("express");
 const Lens = require("../models/Lens");
+const User = require("../models/User");
 const router = express.Router();
 
-router.get("/clients", async (req, res, next) => {
-	res.render("admin/clients");
-  });
+
 
 
   // create lenses
@@ -12,7 +11,7 @@ router.get("/clients", async (req, res, next) => {
 router.get("/lenses", async(req, res, next) => {
   try {
     const lenses = await Lens.find();
-    console.log(lenses)
+    // console.log(lenses)
     res.render("admin/lenses", {lenses});
   }
   catch(error) {
@@ -34,7 +33,7 @@ router.get("/addProduct", async (req, res, next) => {
 });
 
 router.post("/addProduct", async (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
   try {
     const newLens = req.body;
     const createNewLens = await Lens.create(newLens);
@@ -64,7 +63,7 @@ router.post("/addProduct", async (req, res, next) => {
   router.get("/editProduct/:id",  async (req, res, next) => {
     try {
       const LensesrId = req.params.id;
-      console.log(LensesrId)
+      // console.log(LensesrId)
       const lens=  await Lens.findById(LensesrId,req.body);
   
       res.render("admin/editProduct",{lens});
@@ -75,7 +74,7 @@ router.post("/addProduct", async (req, res, next) => {
   router.post("/editProduct/:id",  async (req, res, next) => {
     try {
       const LensesrId = req.params.id;
-      console.log(LensesrId)
+      // console.log(LensesrId)
       const lens=  await Lens.findByIdAndUpdate(LensesrId,req.body,{ new: true });
   
       res.redirect("/admin/lenses");
@@ -84,18 +83,23 @@ router.post("/addProduct", async (req, res, next) => {
     }
   });
 
+//---------------add profile of all clients--------------
 
-
-  // router.get("/editProduct",  async (req, res, next) => {
-  //   try {
+  router.get("/clients", async (req, res, next) => {
+   
+    try {
+      const UserId = req.params.id;
+      console.log(UserId)
+      const user=  await User.find(UserId,req.body);
   
-  //     res.redirect("/admin/editProduct");
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // });
+      res.render("admin/clients",{user});
+    } catch (error) {
+      next(error);
+    }
+
+    });
 
 
-
+  
 
 module.exports = router;

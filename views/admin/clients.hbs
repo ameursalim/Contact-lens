@@ -1,39 +1,30 @@
-<h1>clients list</h1>
 
-	<div class="column">
-	<div class="column is-two-fifths">
 
-    {{#each user}}
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-128x128">
-      <img class="is-rounded"src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-   
-     
-      <div class="media-content">
-    <label class="label" for="username">username</label>
-						<div class="control">
-							<input id="username" name="username" type="text" placeholder="John Snow" class="input">
-							
-						</div>
-     
-      	<label class="label" for="email">email</label>
-						<div class="control">
-							<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input ">
-                        </div>
-       	<label class="label" for="email">Phone</label>
-						<div class="control">
-							<input id="email" name="phone" type="text" placeholder="O554455453" class="input ">
-                        </div>                  
- </div>
-  
-  </div>
-  </div>
-  {{/each}}
-  </div>
-  
+<section class="section" >
+
+<div class="container">
+  <div class="card">
+
+<table class="table">
+<thead>
+  <tr>
+  <th>USERNAME</th>
+  <th>EMAIL</th>
+  <th>PHONE</th>
+  <th>USER PROFILE</th>
+  </tr>
+</thead> 
+<tbody>
+{{#each user}}
+<tr>
+<td>{{this.username}}</td>
+<td>{{this.email}}</td>
+<td>{{this.telephone}}</td>
+<td><a href="/user/profile">GO to profile</a></td>
+</tr>
+</tbody>
+{{/each}}
+</table>
 </div>
-
+</div>
+</section>
