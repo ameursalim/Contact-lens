@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-
+require
 
 
 router.get("/signin", async (req, res, next) => {
@@ -11,35 +11,31 @@ router.get("/signin", async (req, res, next) => {
 
 router.post("/signin", async (req, res, next) => {
   const { email, password } = req.body;
+
   try {
     const foundUser = await User.findOne({ email });
     if (!foundUser) {
-      // This will be handled, by the eraseSessionMessage middelware in app.js
-      req.session.msg = { status: 401, text: "Invalid credentials" };
-      /**  Same could be done using the flash middleware **/ 
-      // req.flash("error", "Invalid credentials");  // If you wanted to use flash you could aswell, you would have to handle i
-      return res.redirect("/");
+
+      req.flash("error", "Invalid credentials"); 
+      return res.redirect("/auth/signin");
+
     }
     if (!bcrypt.compareSync(password, foundUser.password)) {
-      // req.flash("error", "Invalid credentials");
-      req.session.msg = { status: 401, text: "Invalid credentials" };
-      return res.render("/");
+      req.flash("error", "Invalid credentials");
+    
+      return res.render("/auth/signin");
     }
-    req.session.currentUser = foundUser;
+
+    const userObj = foundUser.toObject()
+    delete userObj.password
+    req.session.currentUser = userObj;
+    req.flash("success", "Successfully logged in...")
     res.redirect("/");
+
   } catch (err) {
     next(err);
   }
 });
-
-
-
-
-
-
-
-
-
 
 // signup
 

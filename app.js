@@ -13,21 +13,25 @@ var app = express();
 const hbs = require('hbs')
 const MongoStore = require("connect-mongo")(session);
 const User = require('./models/User')
+const flash = require("connect-flash")
+
 app.use(express.json());
 //session setup
 // SESSION SETUP
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 6000000 }, // in millisec
+    cookie: { maxAge: 6000000 }, 
     store: new MongoStore({
-      mongooseConnection: mongoose.connection, // you can store session infos in mongodb :)
-      ttl: 24 * 60 * 60, // 1 day
+      mongooseConnection: mongoose.connection, 
+      ttl: 24 * 60 * 60,
     }),
     saveUninitialized: true,
     resave: true,
   })
 );
+
+app.use(flash())
 
 if(process.env.DEV_MODE=== "true"){
 

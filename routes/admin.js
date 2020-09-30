@@ -3,13 +3,14 @@ const Lens = require("../models/Lens");
 const User = require("../models/User");
 const router = express.Router();
 const fileUploader = require('../config/cloudinary.js');
+const protectedAdminRoute = require('../middlewares/protectedAdminRoute')
 
 
 
 
   // create lenses
 
-router.get("/lenses", async(req, res, next) => {
+router.get("/lenses", protectedAdminRoute, async(req, res, next) => {
   try {
     const lenses = await Lens.find();
     // console.log(lenses)
@@ -20,7 +21,7 @@ router.get("/lenses", async(req, res, next) => {
   }
 });
 
-router.get("/addProduct", async (req, res, next) => {
+router.get("/addProduct", protectedAdminRoute, async (req, res, next) => {
   try{
   const lenses = await Lens.find();
   
@@ -33,7 +34,7 @@ router.get("/addProduct", async (req, res, next) => {
 
 });
 
-router.post("/addProduct", fileUploader.single('img'), async (req, res, next) => {
+router.post("/addProduct", protectedAdminRoute, fileUploader.single('img'), async (req, res, next) => {
   try {
 
     const newLens = req.body;
@@ -50,7 +51,7 @@ router.post("/addProduct", fileUploader.single('img'), async (req, res, next) =>
 
 
 
-  router.get("/delete/:id",  async (req, res, next) => {
+  router.get("/delete/:id", protectedAdminRoute, async (req, res, next) => {
     try {
       const LensesrId = req.params.id;
       await Lens.findByIdAndDelete(LensesrId);
@@ -62,7 +63,7 @@ router.post("/addProduct", fileUploader.single('img'), async (req, res, next) =>
 
 // -----------updtate-------
 
-  router.get("/editProduct/:id",  async (req, res, next) => {
+  router.get("/editProduct/:id",  protectedAdminRoute, async (req, res, next) => {
     try {
       const LensesrId = req.params.id;
       // console.log(LensesrId)
@@ -74,7 +75,7 @@ router.post("/addProduct", fileUploader.single('img'), async (req, res, next) =>
     }
   });
 
-  router.post("/editProduct/:id", fileUploader.single('img'), async (req, res, next) => {
+  router.post("/editProduct/:id", protectedAdminRoute, fileUploader.single('img'), async (req, res, next) => {
     try {
       const LensesId = req.params.id;
       // console.log(LensesrId)
@@ -90,7 +91,7 @@ router.post("/addProduct", fileUploader.single('img'), async (req, res, next) =>
 
 //---------------add profile of all clients--------------
 
-  router.get("/clients", async (req, res, next) => {
+  router.get("/clients", protectedAdminRoute, async (req, res, next) => {
    
     try {
       const UserId = req.params.id;
