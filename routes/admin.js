@@ -99,9 +99,39 @@ router.post("/addProduct", async (req, res, next) => {
 
     });
 
+//_______ RENDER PROFIL AND ORDERS --------)
 
+router.get('/profile/:id', async function(req, res, next) {
+  try {
+    const user = await User.findById(req.params.id)
+    res.render('user/profile', { user, js: ['btnEdit'] });
+  } catch (error) {
+    console.error(error)
+  }
+});
 
-
+router.get('/orders/:id', async function(req, res, next) {
+  try {
+    const user = await User.findById( req.params.id ).populate("info.id_ContactLens") 
+    const lenses = await Lens.find()
+    const frequency = [
+      'daily',
+      'weekly',
+      'monthly'
+    ]
+  
+    res.render(
+      'user/orders', 
+      { 
+        user, 
+        lenses, 
+        frequency, 
+        js: ['btnEdit'] 
+      });
+  } catch (error) {
+    console.error(error)
+  }
+});
 
 
 
