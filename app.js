@@ -13,7 +13,7 @@ var app = express();
 const hbs = require('hbs')
 const MongoStore = require("connect-mongo")(session);
 const User = require('./models/User')
-
+app.use(express.json());
 //session setup
 // SESSION SETUP
 app.use(
@@ -29,17 +29,21 @@ app.use(
   })
 );
 
-if(process.env.DEV_MODE){
+if(process.env.DEV_MODE=== "true"){
 
-  app.use(async (req,res,next) => {
-    if(process.env.ADMIN_USER){
-      const user = await User.findOne({role: "admin"});
-      req.session.currentUser = user;
-    }else {
-      const user = await User.findOne({role: "user"});
-      req.session.currentUser = user;
-    }
-    next()
+  app.use((req,res,next) => {
+    (async () => {
+      if(process.env.ADMIN_USER === "true"){
+        const user = await User.findOne({role: "admin"});
+        req.session.currentUser = user;
+        console.log('admin')
+      }else {
+        const user = await User.findOne({role: "user"});
+        req.session.currentUser = user;
+        console.log('user')
+      }
+      next()
+    })()
   })
 }
 

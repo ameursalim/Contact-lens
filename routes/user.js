@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const User = require('../models/User')
 const Lens = require('../models/Lens')
+const fileUploader = require('../config/cloudinary.js');
 
 /* GET users listing. */
 router.get('/profile', async function(req, res, next) {
@@ -37,11 +38,18 @@ router.get('/orders', async function(req, res, next) {
 });
 
 
-router.post('/edit/:id', async (req, res, next) => {
-  
+router.post('/edit/:id', fileUploader.single('ordonnance'), async (req, res, next) => {
+ 
   try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/user/profile')
+    const newProperties = req.body
+    const backToPage = req.headers.referer.slice(-1) === 's' ? 'orders' : 'profile'
+
+    newProperties['info.mutuelle'] = req.body.mutuelle
+    console.log(req.file)
+    if (req.file) newProperties['info.ordonnance'] = req.file.path
+
+    const user = await User.findByIdAndUpdate(req.params.id, newProperties)
+    res.redirect(`/user/${backToPage}`)
   } catch (error) {
     console.error(error)
   }
@@ -56,6 +64,7 @@ router.get('/delete/:id', async (req, res, next) => {
     console.error(error)
   }
 })
+
 
 module.exports = router;
 

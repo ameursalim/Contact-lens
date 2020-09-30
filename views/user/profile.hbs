@@ -71,7 +71,7 @@
 	</div>
 	<div class="column"></div>
 	<div class="column is-two-fifths">
-		<form class="form-horizontal" enctype="multipart/form-data">
+		<form class="form-horizontal" method="POST" action="/user/edit/{{user._id}}" enctype="multipart/form-data">
 			<fieldset>
 
 			<!-- Form Name -->
@@ -79,28 +79,21 @@
 
 			<!-- Text input-->
 			<div class="field">
-			<label class="label" for="carteVitale">your carte Vitale</label>
+			<label class="label" for="carteVitale">your carte Vitale :</label>
 			<div class="control">
 				<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input " value="{{user.info.carteVitale}}" readonly="true">
 			</div>
 			</div>
 
-			<!-- File Button --> 
-
-			<label class="label" for="mutuelle">upload your mutuelle</label>
-			<div class="file">
-			<label class="file-label">
-				<input class="file-input" type="file" name="mutuelle" onchange="if (this.files.length > 0) document.getElementById('filename-mutuelle').innerHTML = this.files[0].name;">
-				<span class="file-cta">
-				<span class="file-icon">
-					<i class="fa fa-upload"></i>
-				</span>
-				<span class="file-label" id="filename-mutuelle">
-					Choose a file…
-				</span>
-				</span>
-			</label>
+			<!-- Text input-->
+			<div class="field">
+			<label class="label" for="mutuelle">your mutuelle complementaire :</label>
+			<div class="control">
+				<input id="mutuelle" name="mutuelle" type="text" placeholder="42645343523445" class="input " value="{{user.info.mutuelle}}" readonly="true">
 			</div>
+			</div>
+
+			
 			<!-- File Button --> 
 
 			<label class="label" for="ordonnance">upload your ordonnance</label>
@@ -116,6 +109,15 @@
 				</span>
 				</span>
 			</label>
+			</div>
+
+			<!-- Button (Double) -->
+			<div id="double" class="field">
+			<label class="label" for="edit"></label>
+			<div class="control">
+				<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
+				<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/user/profile">Discard changes</button>
+			</div>
 			</div>
 			</fieldset>
 		</form>
