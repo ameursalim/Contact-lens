@@ -9,7 +9,7 @@
 						<i class="far fa-edit"></i>
 					</span>
 			</button>
-			<form class="form-horizontal" method="POST" action="/user/edit/{{user._id}}">
+			<form class="form-horizontal" method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}">
 				<fieldset>
 
 
@@ -105,7 +105,7 @@
 				<label class="label" for="edit"></label>
 				<div class="control">
 					<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
-					<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/user/orders">Discard changes</button>
+					<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/orders/{{user._id}}">Discard changes</button>
 				</div>
 				</div>
 

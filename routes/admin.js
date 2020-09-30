@@ -94,16 +94,33 @@ router.post("/addProduct", protectedAdminRoute, fileUploader.single('img'), asyn
   router.get("/clients", protectedAdminRoute, async (req, res, next) => {
    
     try {
-      const UserId = req.params.id;
-      console.log(UserId)
-      const user=  await User.find(UserId,req.body);
-  
+      const user=  await User.find();
+
       res.render("admin/clients",{user});
     } catch (error) {
       next(error);
     }
 
-    });
+  });
+
+    router.post('/edit/:id', protectedAdminRoute, fileUploader.single('ordonnance'), async (req, res, next) => {
+ 
+      try {
+        const newProperties = req.body
+        const previousPage = req.headers.referer.split('/')
+        const backToPage = previousPage[previousPage.length -2].slice(-1) === 's' ? 'orders' : 'profile'
+        
+        newProperties['info.mutuelle'] = req.body.mutuelle
+    
+        if (req.file) newProperties['info.ordonnance'] = req.file.path
+    
+        const user = await User.findByIdAndUpdate(req.params.id, newProperties)
+        res.redirect(`/admin/${backToPage}/${req.params.id}`)
+      } catch (error) {
+        console.error(error)
+      }
+    
+    })
 
 //_______ RENDER PROFIL AND ORDERS --------)
 
@@ -138,6 +155,7 @@ router.get('/orders/:id', async function(req, res, next) {
     console.error(error)
   }
 });
+
 
 
 

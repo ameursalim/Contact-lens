@@ -15,11 +15,11 @@
     <div class="navbar-start">
 
 		{{#if isUser}}
-	      <a href="/user/orders" class="navbar-item">
+	      <a href="/user/orders/{{currentUser._id}}" class="navbar-item">
 			orders
 		</a>
 
-		<a href="/user/profile" class="navbar-item">
+		<a href="/user/profile/{{currentUser._id}}" class="navbar-item">
 			profile
 		</a>
 		{{/if}}
