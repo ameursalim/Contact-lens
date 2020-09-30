@@ -2,6 +2,7 @@ const express = require("express");
 const Lens = require("../models/Lens");
 const User = require("../models/User");
 const router = express.Router();
+const fileUploader = require('../config/cloudinary.js');
 
 
 
@@ -32,10 +33,11 @@ router.get("/addProduct", async (req, res, next) => {
 
 });
 
-router.post("/addProduct", async (req, res, next) => {
-    // console.log(req.body);
+router.post("/addProduct", fileUploader.single('img'), async (req, res, next) => {
   try {
+
     const newLens = req.body;
+    newLens.img = req.file ? req.file.path : 'https://64.media.tumblr.com/16e0376edae2174fc3814afd6f29c6ee/tumblr_inline_o5j7t4Kg8N1sv6mvi_500.jpg'
     const createNewLens = await Lens.create(newLens);
     res.redirect("/admin/lenses");
   } catch (error) {
@@ -71,11 +73,14 @@ router.post("/addProduct", async (req, res, next) => {
       next(error);
     }
   });
-  router.post("/editProduct/:id",  async (req, res, next) => {
+
+  router.post("/editProduct/:id", fileUploader.single('img'), async (req, res, next) => {
     try {
-      const LensesrId = req.params.id;
+      const LensesId = req.params.id;
       // console.log(LensesrId)
-      const lens=  await Lens.findByIdAndUpdate(LensesrId,req.body,{ new: true });
+      const upToDataLens = req.body
+      if (req.file) upToDataLens.img = req.file.path
+      await Lens.findByIdAndUpdate(LensesId,upToDataLens,{ new: true });
   
       res.redirect("/admin/lenses");
     } catch (error) {

@@ -45,7 +45,7 @@ router.post('/edit/:id', fileUploader.single('ordonnance'), async (req, res, nex
     const backToPage = req.headers.referer.slice(-1) === 's' ? 'orders' : 'profile'
 
     newProperties['info.mutuelle'] = req.body.mutuelle
-    console.log(req.file)
+    
     if (req.file) newProperties['info.ordonnance'] = req.file.path
 
     const user = await User.findByIdAndUpdate(req.params.id, newProperties)
