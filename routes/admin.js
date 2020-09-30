@@ -10,7 +10,8 @@ router.get("/clients", async (req, res, next) => {
 router.get("/lenses", async(req, res, next) => {
   try {
     const lenses = await Lens.find();
-    res.render("lenses", {lenses});
+    console.log(lenses)
+    res.render("admin/lenses", {lenses});
   }
   catch(error) {
     next(error);

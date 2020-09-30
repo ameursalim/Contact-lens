@@ -5,11 +5,11 @@
         <i class="fas fa-plus  icon is-medium"></i>
         </a>
         </h3>
-       
+             {{#each lenses}}
 	  <div class="container">
 		<div class="tile is-ancestor">
 			
-        <form class="form" action="/admin/addProduct" method="GET"></form>
+   
 
             <div class="tile is-parent">
 				<div class="card">
@@ -23,7 +23,7 @@
 
                     {{!-- content --}}
 
- 
+                      
 
 					<div class="card-content">
 						<div class="media">
@@ -40,7 +40,7 @@
                           
                            <label id="description" for="description"></label>
                            <input id="description" name="description" type="text" placeholder="John Snow" class="input is-large" readonly="true" >
-						<div class="content">{{Lens.description}}</div>
+						<div class="content">{{this.description}}</div>
 					</div>
              
 
@@ -52,12 +52,12 @@
 				</div>
 			  </div>
                
-        
+        {{/each}}
    
                 </div>
-                </form>  
+               
 			</div>
-            <a href="/admin/editProduct" class="card-footer-item">edit</a>
+         
 		</section>
 
       
