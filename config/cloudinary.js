@@ -1,30 +1,27 @@
-const cloudinary = require("cloudinary").v2; // Don't forget the .v2 !
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const multer = require("multer");
+// configs/cloudinary.config.js
 
-// Configure cloudinary to connect to your cloudinary account.
+const cloudinary = require('cloudinary');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer = require('multer');
+
 cloudinary.config({
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
   cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
 const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: "foo",
-    // allowedFormats: ["jpg", "png"], // Specify the allowed formats for your uploaded files
-    format: async (req, file) => {
-      // Format your file into jpeg/png etc...
-      // async code using `req` and `file`
-      // ...
-      return "jpeg";
-    },
-    // format: "jpeg", // supports promises as well
-    // public_id: (req, file) => "computed-filename-using-request",
-  },
+  // cloudinary: cloudinary,
+  cloudinary,
+  folder: 'folder-name', // The name of the folder in cloudinary
+  allowedFormats: ['jpg', 'png'],
+  // params: { resource_type: 'raw' }, => this is in case you want to upload other type of files, not just images
+  filename: function (req, file, cb) {
+    cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
+  }
 });
 
-const uploader = multer({ storage: storage });
+//                        storage: storage
+const uploadCloud = multer({ storage });
 
-module.exports = uploader;
+module.exports = uploadCloud;
