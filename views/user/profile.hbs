@@ -123,10 +123,10 @@
 	<div class="column"></div>
 </div>
 </section>
-<section class="section dekete-profile">
+<section class="section delete-profile">
 	<div class="box">
-		<form action="/delete/{{user._id}}">
-		<button class="button is-primary">💀 Delete profile 💀</button>
+		<form action="/user/delete/{{user._id}}" method="GET">
+			<button class="button is-primary">💀 Delete profile 💀</button>
 		</form>
 	</div>
 </section>

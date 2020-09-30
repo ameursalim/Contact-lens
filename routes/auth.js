@@ -18,12 +18,12 @@ router.post("/signin", async (req, res, next) => {
       req.session.msg = { status: 401, text: "Invalid credentials" };
       /**  Same could be done using the flash middleware **/ 
       // req.flash("error", "Invalid credentials");  // If you wanted to use flash you could aswell, you would have to handle i
-      return res.redirect("/signin");
+      return res.redirect("/");
     }
     if (!bcrypt.compareSync(password, foundUser.password)) {
       // req.flash("error", "Invalid credentials");
       req.session.msg = { status: 401, text: "Invalid credentials" };
-      return res.render("/signin");
+      return res.render("/");
     }
     req.session.currentUser = foundUser;
     res.redirect("/");
