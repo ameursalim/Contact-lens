@@ -1,38 +1,38 @@
 <section class="section">
+
+
   <div class="container">
     <div class="columns is-desktop is-vcentered">
-      <div class="column is-6-desktop"><img src="https://placehold.it/600x400" alt=""></div>
-      <div class="column is-6-desktop">
-        <div class="level is-mobile">
-         
-          <div class="level-left"><a class="level-item" href="#"><img src="placeholder/icons/unicorn.svg" alt=""></a><a class="level-item" href="#"><img src="placeholder/icons/unicorn.svg" alt=""></a><a class="level-item" href="#"><img src="placeholder/icons/unicorn.svg" alt=""></a><a class="level-item" href="#"><img src="placeholder/icons/unicorn.svg" alt=""></a><a class="level-item" href="#"><img src="placeholder/icons/unicorn.svg" alt=""></a></div>
+      <div class="column is-6-desktop"><img src="{{lens.img}}" alt=""></div>
+      
+	  <div class="column is-6-desktop">
         
-        </div>
+
         
-       <form class="form-horizontal" >
+       <form class="form-horizontal"  method="POST">
 						<fieldset>
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="username">Brand Name</label>
+						<label class="label" for="brande"></label>
 						<div class="control">
-							<input id="username" name="username" type="text" placeholder="John Snow" class="input ">
+							<input id="brand" name="brand" type="text" placeholder="John Snow" class="input " value={{lens.brand}}>
 							
 						</div>
 						</div>
                         <!-- Text input-->
 						<div class="field">
-						<label class="label" for="username">Brand reference</label>
+						<label class="label" for="username"></label>
 						<div class="control">
-							<input id="username" name="username" type="text" placeholder="JMVDSFF" class="input ">
+							<input id="reference" name="reference" type="text" placeholder="JMVDSFF" class="input " value={{lens.reference}}>
 							
 						</div>
 						</div>
 
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="description">Description</label>
+						<label class="label" for="description"></label>
 						<div class="control">
-							<textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+							<textarea id="description" name="description" type="text"class="textarea" placeholder="e.g. Hello world" >{{lens.description}}</textarea>
 							
 						</div>
 						</div>
@@ -50,10 +50,12 @@
 
 						</fieldset>
 					</form>
-       
+        
         <hr>
        
       </div>
     </div>
   </div>
+      
+
 </section>

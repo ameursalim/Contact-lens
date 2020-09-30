@@ -19,3 +19,8 @@ input:read-only {
 #show {
 	z-index: 50;
 }
+table{
+	margin-top: 100PX;
+	border: solid 2px;
+	border-radius: 20%;
+}
