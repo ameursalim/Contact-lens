@@ -16,7 +16,7 @@
 					<div class="card-image">
                        
 						<figure class="image is-4by3">
-							<img src="/image/acuvue.jpg" alt="Placeholder image">
+							<img src="{{this.img}}" alt="Placeholder image">
 						</figure>
                          
 					</div>
@@ -29,25 +29,38 @@
 						<div class="media">
 							<div class="media-left">
 								<figure class="image is-48x48">
-									<img src="/image/acuvue.jpg" alt="">
+									<img src="{{this.img}}" alt="">
 								</figure>
 							</div>
 							<div class="media-content"> 
-                                <label id="brand" name="brand" for="brand"> </label>
-                                <input id="brand" name="brand" type="text" placeholder="John Snow" class="input is-large" readonly="true" >
+                                <label id="brand" name="brand" for="brand">{{this.brand}} </label>
+                                
+                               
 							</div>
-						</div>
-                          
-                           <label id="description" for="description"></label>
-                           <input id="description" name="description" type="text" placeholder="John Snow" class="input is-large" readonly="true" >
-						<div class="content">{{this.description}}</div>
+
+                             <div class="media-content"> 
+                           <label id="description" for="description">{{this.reference}}</label>
+                       
+
+                            </div>
+					
+                          <div class="media-content"> 
+                           <label id="description" for="description">{{this.description}}</label>
+                   
+
+                            </div>
+
+
+
+
+
 					</div>
              
 
 
 					 <footer class="card-footer">
-					    <a href="/admin/editProduct" class="card-footer-item">edit</a>
-						 <a href="" class="card-footer-item">delete</a>
+					    <a href="/admin/editProduct/{{this._id}}" class="card-footer-item">edit</a>
+						 <a href="/admin/delete/{{this._id}}" class="card-footer-item">delete</a>
 					 </footer>
 				</div>
 			  </div>
@@ -57,7 +70,7 @@
                 </div>
                
 			</div>
-         
+        </div> 
 		</section>
 
       

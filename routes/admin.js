@@ -7,6 +7,8 @@ router.get("/clients", async (req, res, next) => {
   });
 
 
+  // create lenses
+
 router.get("/lenses", async(req, res, next) => {
   try {
     const lenses = await Lens.find();
@@ -17,7 +19,6 @@ router.get("/lenses", async(req, res, next) => {
     next(error);
   }
 });
-
 
 router.get("/addProduct", async (req, res, next) => {
   try{
@@ -43,11 +44,25 @@ router.post("/addProduct", async (req, res, next) => {
   }
 });
 
+// ----------------------DELETE PRODUCT -------------------------
 
 
-router.get("/editProduct", async (req, res, next) => {
-  res.render("admin/editProduct");
-});
+
+
+  router.get("/delete/:id",  async (req, res, next) => {
+    try {
+      const LensesrId = req.params.id;
+      await Lens.findByIdAndDelete(LensesrId);
+      res.redirect("/admin/lenses");
+    } catch (error) {
+      next(error);
+    }
+  });
+
+// ---------------------edit product ---------------------
+
+router.get
+
 
 
 module.exports = router;
