@@ -59,9 +59,42 @@ router.post("/addProduct", async (req, res, next) => {
     }
   });
 
-// ---------------------edit product ---------------------
+// -----------updtate-------
 
-router.get
+  router.get("/editProduct/:id",  async (req, res, next) => {
+    try {
+      const LensesrId = req.params.id;
+      console.log(LensesrId)
+      const lens=  await Lens.findById(LensesrId,req.body);
+  
+      res.render("admin/editProduct",{lens});
+    } catch (error) {
+      next(error);
+    }
+  });
+  router.post("/editProduct/:id",  async (req, res, next) => {
+    try {
+      const LensesrId = req.params.id;
+      console.log(LensesrId)
+      const lens=  await Lens.findByIdAndUpdate(LensesrId,req.body,{ new: true });
+  
+      res.redirect("/admin/lenses");
+    } catch (error) {
+      next(error);
+    }
+  });
+
+
+
+  // router.get("/editProduct",  async (req, res, next) => {
+  //   try {
+  
+  //     res.redirect("/admin/editProduct");
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // });
+
 
 
 
