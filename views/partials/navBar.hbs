@@ -14,7 +14,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
 
-		{{!-- {{#if isUser}} --}}
+		{{#if isUser}}
 	      <a href="/user/orders" class="navbar-item">
 			orders
 		</a>
@@ -22,8 +22,8 @@
 		<a href="/user/profile" class="navbar-item">
 			profile
 		</a>
-		{{!-- {{/if}}
-		{{#if isAdmin}} --}}
+		{{/if}}
+		{{#if isAdmin}}
 	      <a href="/admin/clients" class="navbar-item">
 			clients
 		</a>
@@ -31,7 +31,7 @@
 		<a href="/admin/lenses" class="navbar-item">
 			lenses
 		</a>
-		{{!-- {{/if}} --}}
+		{{/if}}
 
 
     </div>
@@ -39,19 +39,19 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-			{{!-- {{#unless isLoggedIn}} --}}
+			{{#unless isLoggedIn}}
           <a href="/auth/signup" class="button is-primary">
             <strong>Sign up</strong>
           </a>
           <a href="/auth/signin" class="button">
             Log in
           </a>
-			{{!-- {{/unless}} --}}
-			{{!-- {{#if isLoggedIn}} --}}
+			{{/unless}}
+			{{#if isLoggedIn}}
 		  <a href="/auth/logout" class="button">
             Log out
           </a>
-			{{!-- {{/if}} --}}
+			{{/if}}
         </div>
       </div>
     </div>
