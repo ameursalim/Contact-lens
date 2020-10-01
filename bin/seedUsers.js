@@ -4,47 +4,25 @@ const mongoose = require("mongoose");
 
 const users = [{
         
-    username: "FOO",
-    email:"foo@gmail.com",
-    password:"12345",
-    role:"user",
-    address:"22 rue victor hugo",
-    telephone:06434564355,
-    info: {
-        id_ContactLens:"5f73148aab2379ebcae1454e",
-        frequency:"daily",
-        reminder:Date.now(),
-        delivered:true,
-        carteVitale:"1825652867463546",
-        mutuelle : "2652456534635",
-        ordonnance: "Cloudinary",
-
-    },
-
-    
-	},
-    
-    {
-        
-        username: "baz",
-        email:"baz@gmail.com",
-        password:"1236456565",
+        username: "admin",
+        email:"admin@gmail.com",
+        password:"$2b$10$KcvbOgGEVjm9ncQpd0eIlObcfaSBPnvZtsNDZvj6AZ92Rf016KX3a",
         role:"admin",
         address:"22 rue GAMBETTA",
-        telephone:065357376575,
+        telephone:"065357376575",
         info: {
-            id_ContactLens:"5f73148aab2379ebcae1454e",
+            id_ContactLens:"5f75e1c49ceba215364ef95f",
             frequency:"monthly",
             reminder: Date.now() ,
             delivered: false,
             carteVitale:"182565286752637149863",
-            mutuelle : "5524165434147916354342",
+            mutuelle: "5524165434147916354342",
             ordonnance: "Cloudinary",
     
         },
     
         
-        },
+    },
 ];
 
 mongoose
