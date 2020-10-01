@@ -3,22 +3,22 @@ const lens = require("../models/Lens");
 const mongoose = require("mongoose");
 
 const lenses = [{
-		img:"jn",
-        brand:"nkn",
-        reference:"1233434",
-        description:"sqfdsdfsqdfqsdfsdf"
+		img:"https://res.cloudinary.com/des8h9eva/image/upload/v1601560674/lens/vblwvw9oqzqxbx7yjsiu.jpg",
+        brand:"Acuvue",
+        reference:"#1233434",
+        description:"They give you a very acute view"
 	},
 	{
-		img:"btgrhn",
-        brand:"rtrkn",
-        reference:"MV2344",
-        description:"sqdfsdfgdf"
+		img:"https://res.cloudinary.com/des8h9eva/image/upload/v1601560848/lens/v9gy4f2yi50n61ii6ubl.jpg",
+        brand:"Dailies",
+        reference:"#MV2344",
+        description:"Give us this day our daily lens"
 	},
 	{
-		img:"grfn",
-        brand:"lknhbjn",
-        reference:"Mrefae44544",
-        description:"sqdfsdfgdf"
+		img:"https://res.cloudinary.com/des8h9eva/image/upload/v1601560938/lens/g2jzr4at1t1yfnlzc7ak.jpg",
+        brand:"Air",
+        reference:"#44544",
+        description:"So light."
 	}
  
 ];

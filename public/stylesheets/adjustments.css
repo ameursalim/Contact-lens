@@ -38,17 +38,6 @@ table{
 	height: 200px;
 }
 
-#placeholderContainer img {
-	width: 200px;
-}
-
-.table{
-	border-radius: 20px;
-}
-thead th{
-	background-color:rgb(2, 210, 178);
-}
-
-tbody tr:hover{
-	background-color: rgb(2, 210, 178);
+.card-image img {
+	background-color: #cccccc;
 }

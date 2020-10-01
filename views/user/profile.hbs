@@ -4,7 +4,7 @@
 	<div class="column is-two-fifths">
 			<div class="card-image zi50">
 				<figure id="profilePic" class="image is-128x128">
-					<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+					<img class="is-rounded" src="{{user.avatar}}">
 				</figure>
 			</div>
 			<div class="box">
@@ -13,7 +13,7 @@
 						<i class="far fa-edit"></i>
 					</span>
 				</button>
-				<div class="card-content">
+				<div class="card-content has-text-centered">
 				<div class="content">
 					<form id="form0" class="form-horizontal " method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}">
 						<fieldset>
@@ -21,41 +21,41 @@
 						<div class="field">
 							<div class="block">
 								<div class="control">
-									<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large" readonly="true" value="{{user.username}}">
+									<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large has-text-centered" readonly="true" value="{{user.username}}">
 								</div>
 							</div>
 						</div>
 						<div class="is-divider" data-content=" "></div>
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="email">email :</label>
+						<label class="label is-size-7" for="email">email :</label>
 						<div class="control">
-							<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input" readonly="true" value="{{user.email}}">
+							<input id="email" name="email" type="text" placeholder="john.snow@winter.fall" class="input has-text-centered" readonly="true" value="{{user.email}}">
 							
 						</div>
 						</div>
 						<div class="is-divider" data-content=" "></div>
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="telephone">your number :</label>
+						<label class="label is-size-7" for="telephone">your number :</label>
 						<div class="control">
-							<input id="telephone" name="telephone" type="text" placeholder="0607080910" class="input" readonly="true" value="{{user.telephone}}">
+							<input id="telephone" name="telephone" type="text" placeholder="0607080910" class="input has-text-centered" readonly="true" value="{{user.telephone}}">
 							
 						</div>
 						</div>
 						<div class="is-divider" data-content=" "></div>
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="address">your address :</label>
+						<label class="label is-size-7" for="address">your address :</label>
 						<div class="control">
-							<input id="address" name="address" type="text" placeholder="15 wintefall wall NY" class="input" readonly="true" value="{{user.address}}">
+							<input id="address" name="address" type="text" placeholder="15 wintefall wall NY" class="input has-text-centered" readonly="true" value="{{user.address}}">
 							
 						</div>
 						</div>
 
 						<!-- Button (Double) -->
 						<div class="field">
-							<label class="label" for="edit"></label>
+							<label class="label is-size-7" for="edit"></label>
 							<div class="control doubleBtn">
 								<div class="is-divider" data-content=" "></div>
 								<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
@@ -75,63 +75,65 @@
 <div class="columns">
 	<div class="column"></div>
 	<div class="column is-two-fifths">
-		<button class="button is-warning is-pulled-right shower zi50">
-					<span class="icon">
-						<i class="far fa-edit"></i>
-					</span>
-				</button>
-		<form id='form1' class="form-horizontal " method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}" enctype="multipart/form-data">
-			<fieldset>
+		<div class="box has-text-centered">
+			<button class="button is-warning is-pulled-right shower zi50">
+						<span class="icon">
+							<i class="far fa-edit"></i>
+						</span>
+					</button>
+			<form id='form1' class="form-horizontal " method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}" enctype="multipart/form-data">
+				<fieldset>
 
-			<!-- Form Name -->
-			<legend>Information for the Optician</legend>
+				<!-- Form Name -->
+				<legend>Information for the Optician</legend>
 
-			<!-- Text input-->
-			<div class="field">
-			<label class="label" for="carteVitale">your carte Vitale :</label>
-			<div class="control">
-				<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input " value="{{user.info.carteVitale}}" readonly="true">
-			</div>
-			</div>
-			<div class="is-divider" data-content=""></div>
-			<!-- Text input-->
-			<div class="field">
-			<label class="label" for="mutuelle">your mutuelle complementaire :</label>
-			<div class="control">
-				<input id="mutuelle" name="mutuelle" type="text" placeholder="42645343523445" class="input " value="{{user.info.mutuelle}}" readonly="true">
-			</div>
-			</div>
-
-			<div class="is-divider" data-content=" "></div>
-			<!-- File Button --> 
-
-			<label class="label" for="ordonnance">upload your ordonnance</label>
-			<div class="file">
-			<label class="file-label">
-				<input id="output" class="file-input" type="file" name="ordonnance" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
-				<span class="file-cta">
-				<span class="file-icon">
-					<i class="fa fa-upload"></i>
-				</span>
-				<span class="file-label" id="filename-ordonnance">
-					Choose a file…
-				</span>
-				</span>
-			</label>
-			</div>
-			<div id="placeholderContainer"></div>
-
-			<!-- Button (Double) -->
-			<div class="field" >
-				<label class="label" for="edit"></label>
-				<div class="control doubleBtn">
-					<div class="is-divider" data-content=" "></div>
-					<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
-					<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/profile/{{user._id}}">Discard changes</button>
+				<!-- Text input-->
+				<div class="field">
+				<label class="label is-size-7" for="carteVitale">your carte Vitale :</label>
+				<div class="control">
+					<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input has-text-centered" value="{{user.info.carteVitale}}" readonly="true">
 				</div>
-			</div>
-			</fieldset>
-		</form>
+				</div>
+				<div class="is-divider" data-content=""></div>
+				<!-- Text input-->
+				<div class="field">
+				<label class="label is-size-7" for="mutuelle">your mutuelle complementaire :</label>
+				<div class="control">
+					<input id="mutuelle" name="mutuelle" type="text" placeholder="42645343523445" class="input has-text-centered" value="{{user.info.mutuelle}}" readonly="true">
+				</div>
+				</div>
+
+				<div class="is-divider" data-content=" "></div>
+				<!-- File Button --> 
+
+				<label class="label is-size-7" for="ordonnance">upload your ordonnance</label>
+				<div class="file">
+				<label class="file-label">
+					<input id="output" class="file-input" type="file" name="ordonnance" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
+					<span class="file-cta">
+					<span class="file-icon">
+						<i class="fa fa-upload"></i>
+					</span>
+					<span class="file-label" id="filename-ordonnance">
+						Choose a file…
+					</span>
+					</span>
+				</label>
+				</div>
+				<div id="placeholderContainer"></div>
+
+				<!-- Button (Double) -->
+				<div class="field" >
+					<label class="label is-size-7" for="edit"></label>
+					<div class="control doubleBtn">
+						<div class="is-divider" data-content=" "></div>
+						<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
+						<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/profile/{{user._id}}">Discard changes</button>
+					</div>
+				</div>
+				</fieldset>
+			</form>
+		</div>
 	</div>
 	<div class="column"></div>
 </div>
