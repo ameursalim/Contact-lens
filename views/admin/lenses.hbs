@@ -1,26 +1,27 @@
 
-
-    <h3 class="title is-4">ADD PRODUCT  
-        <a href="/admin/addProduct">
-        <i class="fas fa-plus  icon is-medium"></i>
-        </a>
-        </h3>
-             {{#each lenses}}
+  <div class="container">
 
 
-	  <div class="container">
-		<div class="tile is-ancestor">
-			
+		<h3 class="title is-4">ADD PRODUCT  
+			<a href="/admin/addProduct"> <i class="fas fa-plus  icon is-medium"></i></a>
+		</h3>
+			<div class="columns is-multiline">
+				{{#each lenses}}
 
-            <div class="tile is-parent">
-				<div class="card">
-					<div class="card-image">
-                       
-						<figure class="image is-4by3">
-							<img src="{{this.img}}" alt="Placeholder image">
-						</figure>
-                         
-					</div>
+				<div class="columns">
+					<div class="container">
+						<div class="tile is-ancestor">
+						
+
+						<div class="tile is-parent">
+							<div class="card">
+								<div class="card-image">
+								
+									<figure class="image is-4by3">
+										<img src="{{this.img}}" alt="Placeholder image">
+									</figure>
+									
+								</div>
 
                     {{!-- content --}}
 
@@ -63,12 +64,17 @@
 				</div>
 			  </div>
                
-        {{/each}}
+      
    
                 </div>
                
 			</div>
-        </div> 
-		</section>
-
       
+	  </div>
+	  
+	   </div> 
+  
+  {{/each}}
+	</div>
+
+   </div>   
