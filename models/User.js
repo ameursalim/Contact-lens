@@ -6,7 +6,7 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   role: { type: String, enum: ["admin", "user"], default: "user" },
-  avatar: { type: String, default: 'https://robohash.org/3?200x200' },
+  avatar: { type: String, default: 'https://images.assetsdelivery.com/compings_v2/thesomeday123/thesomeday1231709/thesomeday123170900022.jpg' },
   address: { type: String, default: 'please provide an address' },
   telephone: { type: String, default: 'please provide a telephone number' },
   info: {
