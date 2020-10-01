@@ -2,30 +2,30 @@
 <div class="columns">
 	<div class="column"></div>
 	<div class="column is-two-fifths">
+			<div class="card-image zi50">
+				<figure id="profilePic" class="image is-128x128">
+					<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+				</figure>
+			</div>
 			<div class="box">
-				<button id="show" class="button is-warning is-pulled-right">
+				<button class="button is-warning is-pulled-right shower zi50">
 					<span class="icon">
 						<i class="far fa-edit"></i>
 					</span>
 				</button>
-				<div class="card-image">
-					<figure class="image is-128x128">
-						<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-					</figure>
-				</div>
 				<div class="card-content">
 				<div class="content">
-					<form class="form-horizontal" method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}">
+					<form id="form0" class="form-horizontal " method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}">
 						<fieldset>
 						<!-- Text input-->
 						<div class="field">
-						<label class="label" for="username"></label>
-						<div class="control">
-							<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large" readonly="true" value="{{user.username}}">
-							
+							<div class="block">
+								<div class="control">
+									<input id="username" name="username" type="text" placeholder="John Snow" class="input is-large" readonly="true" value="{{user.username}}">
+								</div>
+							</div>
 						</div>
-						</div>
-
+						<div class="is-divider" data-content=" "></div>
 						<!-- Text input-->
 						<div class="field">
 						<label class="label" for="email">email :</label>
@@ -34,7 +34,7 @@
 							
 						</div>
 						</div>
-
+						<div class="is-divider" data-content=" "></div>
 						<!-- Text input-->
 						<div class="field">
 						<label class="label" for="telephone">your number :</label>
@@ -43,7 +43,7 @@
 							
 						</div>
 						</div>
-
+						<div class="is-divider" data-content=" "></div>
 						<!-- Text input-->
 						<div class="field">
 						<label class="label" for="address">your address :</label>
@@ -54,12 +54,13 @@
 						</div>
 
 						<!-- Button (Double) -->
-						<div id="double" class="field">
-						<label class="label" for="edit"></label>
-						<div class="control">
-							<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
-							<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/profile/{{user._id}}">Discard changes</button>
-						</div>
+						<div class="field">
+							<label class="label" for="edit"></label>
+							<div class="control doubleBtn">
+								<div class="is-divider" data-content=" "></div>
+								<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
+								<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/profile/{{user._id}}">Discard changes</button>
+							</div>
 						</div>
 
 						</fieldset>
@@ -70,8 +71,16 @@
 			</div>
 	</div>
 	<div class="column"></div>
+</div>
+<div class="columns">
+	<div class="column"></div>
 	<div class="column is-two-fifths">
-		<form class="form-horizontal" method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}" enctype="multipart/form-data">
+		<button class="button is-warning is-pulled-right shower zi50">
+					<span class="icon">
+						<i class="far fa-edit"></i>
+					</span>
+				</button>
+		<form id='form1' class="form-horizontal " method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}" enctype="multipart/form-data">
 			<fieldset>
 
 			<!-- Form Name -->
@@ -84,7 +93,7 @@
 				<input id="carteVitale" name="carteVitale" type="text" placeholder="1825652867463546" class="input " value="{{user.info.carteVitale}}" readonly="true">
 			</div>
 			</div>
-
+			<div class="is-divider" data-content=""></div>
 			<!-- Text input-->
 			<div class="field">
 			<label class="label" for="mutuelle">your mutuelle complementaire :</label>
@@ -93,13 +102,13 @@
 			</div>
 			</div>
 
-			
+			<div class="is-divider" data-content=" "></div>
 			<!-- File Button --> 
 
 			<label class="label" for="ordonnance">upload your ordonnance</label>
 			<div class="file">
 			<label class="file-label">
-				<input class="file-input" type="file" name="ordonnance" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
+				<input id="output" class="file-input" type="file" name="ordonnance" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
 				<span class="file-cta">
 				<span class="file-icon">
 					<i class="fa fa-upload"></i>
@@ -110,14 +119,16 @@
 				</span>
 			</label>
 			</div>
+			<div id="placeholderContainer"></div>
 
 			<!-- Button (Double) -->
-			<div id="double" class="field">
-			<label class="label" for="edit"></label>
-			<div class="control">
-				<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
-				<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/profile/{{user._id}}">Discard changes</button>
-			</div>
+			<div class="field" >
+				<label class="label" for="edit"></label>
+				<div class="control doubleBtn">
+					<div class="is-divider" data-content=" "></div>
+					<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
+					<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/profile/{{user._id}}">Discard changes</button>
+				</div>
 			</div>
 			</fieldset>
 		</form>

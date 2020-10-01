@@ -8,7 +8,7 @@ const protectedUserRoute = require('../middlewares/protectedUserRoute')
 router.get('/profile/:id', protectedUserRoute, async function(req, res, next) {
   try {
     const user = await User.findOne({username:req.session.currentUser.username})
-    res.render('user/profile', { user, js: ['btnEdit'] });
+    res.render('user/profile', { user, js: ['btnEdit', 'displayPlaceholder'] });
   } catch (error) {
     console.error(error)
   }
@@ -36,25 +36,6 @@ router.get('/orders/:id', protectedUserRoute, async function(req, res, next) {
     console.error(error)
   }
 });
-
-
-// router.post('/edit/:id', protectedUserRoute, fileUploader.single('ordonnance'), async (req, res, next) => {
- 
-//   try {
-//     const newProperties = req.body
-//     const backToPage = req.headers.referer.slice(-1) === 's' ? 'orders' : 'profile'
-
-//     newProperties['info.mutuelle'] = req.body.mutuelle
-
-//     if (req.file) newProperties['info.ordonnance'] = req.file.path
-
-//     const user = await User.findByIdAndUpdate(req.params.id, newProperties)
-//     res.redirect(`/user/${backToPage}`)
-//   } catch (error) {
-//     console.error(error)
-//   }
-
-// })
 
 router.post('/edit/:id', protectedUserRoute, fileUploader.single('ordonnance'), async (req, res, next) => {
  
