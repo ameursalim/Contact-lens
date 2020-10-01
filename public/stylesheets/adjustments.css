@@ -41,3 +41,8 @@ table{
 .card-image img {
 	background-color: #cccccc;
 }
+
+
+.navbar {
+	z-index: 100;
+}
