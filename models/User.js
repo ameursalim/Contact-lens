@@ -6,9 +6,9 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   role: { type: String, enum: ["admin", "user"], default: "user" },
-  avatar: String,
+  avatar: { type: String, default: '' },
   address: String,
-  telephone: Number,
+  telephone: String,
   info: {
     id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
     frequency : {type:String, enum :["daily","weekly","monthly"]},
