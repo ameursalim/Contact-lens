@@ -16,16 +16,24 @@ input:read-only {
 	color: #363636;
 }
 
-#show {
+.zi50 {
 	z-index: 50;
 }
 table{
-	margin-top: 100PX;
+	margin-top: 100px;
 	border: solid 2px;
 	border-radius: 20%;
 }
 
-section{
-	margin-top: 100px;
-	
+
+.doubleBtn {
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.2s;
+}
+
+#profilePic {
+	transform: translateY(50px);
+	width: 200px;
+	height: 200px;
 }

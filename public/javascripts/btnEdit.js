@@ -1,11 +1,16 @@
-const inputs = document.querySelectorAll('.input')
-const double = document.getElementById('double')
-double.style.visibility = 'hidden'
+const btns = Array.from(document.querySelectorAll('.shower'))
+const allDoubles= Array.from(document.getElementsByClassName('doubleBtn'))
 
-const show = () => {
-	console.log('here!')
+const show = idx => {
+
+	const inputs = document.querySelectorAll(`#form${idx} .input`)
+	const double = document.querySelectorAll(`#form${idx} .doubleBtn`)
+
 	Array.from(inputs).forEach(inpt => inpt.readOnly = !inpt.readOnly)
-	double.style.visibility === 'hidden' ? double.style.visibility = 'visible' : double.style.visibility = 'hidden'
+	Array.from(double)[0].style.maxHeight === '0px' ? Array.from(double)[0].style.maxHeight = '41px' : Array.from(double)[0].style.maxHeight = '0px'
 }
 
-document.getElementById('show').addEventListener('click', show)
+const initialize = () => allDoubles.forEach(btn => btn.style.maxHeight = '0px')
+
+document.addEventListener('load', initialize())
+btns.forEach((btn, idx) => btn.addEventListener('click', () => show(idx) ))

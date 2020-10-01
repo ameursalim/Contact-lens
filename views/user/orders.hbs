@@ -4,12 +4,12 @@
 			<img src="{{user.info.id_ContactLens.img}}" alt="acuvue box">
 		</div>
 		<div class="column">
-			<button id="show" class="button is-warning is-pulled-right">
+			<button class="button is-warning is-pulled-right shower zi50">
 					<span class="icon">
 						<i class="far fa-edit"></i>
 					</span>
 			</button>
-			<form class="form-horizontal" method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}">
+			<form id="form0" class="form-horizontal" method="POST" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/edit/{{user._id}}">
 				<fieldset>
 
 
@@ -101,9 +101,9 @@
 				</div>
 
 				<!-- Button (Double) -->
-				<div id="double" class="field">
+				<div class="field">
 				<label class="label" for="edit"></label>
-				<div class="control">
+				<div class="control doubleBtn">
 					<button id="edit" name="edit" class="button is-primary" type="submit">Save</button>
 					<button id="discard" name="discard" class="button is-warning" type="submit" formmethod="GET" formaction="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/orders/{{user._id}}">Discard changes</button>
 				</div>

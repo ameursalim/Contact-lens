@@ -127,7 +127,7 @@ router.post("/addProduct", protectedAdminRoute, fileUploader.single('img'), asyn
 router.get('/profile/:id', async function(req, res, next) {
   try {
     const user = await User.findById(req.params.id)
-    res.render('user/profile', { user, js: ['btnEdit'] });
+    res.render('user/profile', { user, js: ['btnEdit', 'displayPlaceholder'] });
   } catch (error) {
     console.error(error)
   }
