@@ -55,8 +55,7 @@ if(process.env.DEV_MODE=== "true"){
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, "views/partials"));
-
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -64,7 +63,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //custom middleware
 app.use(require("./middlewares/exposeLoginStatus"));
-
+app.use(require("./middlewares/exposeFlashMessage"));
 //routes
 app.use('/', require('./routes/index'))
 app.use('/user', require('./routes/user'));

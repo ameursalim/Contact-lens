@@ -3,10 +3,11 @@
     <div class="columns is-centered">
       <div class="column is-5 is-4-desktop">
 
-{{#if msg}}
-  <p class="message {{msg.status}}">{{msg.text}}</p>
-  {{/if}}
-  
+
+        <p>
+          {{> message}}
+        </p>
+        
         <form method="post" action="/auth/signup" method="post" id="form_user">
           
           

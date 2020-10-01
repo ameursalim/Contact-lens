@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-require
+
 
 
 router.get("/signin", async (req, res, next) => {
@@ -49,8 +49,7 @@ router.get("/signup", async (req, res, next) => {
     try {
       const foundUser = await User.findOne({ email: email });
       if (foundUser) {
-        // req.flash("error", "Email already taken");
-        req.session.msg = { status: 401, text: "Email already taken." };
+        req.flash("error", "Email already taken");
         return res.redirect("/auth/signup");
       }
       const salt = 10;
