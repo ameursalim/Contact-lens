@@ -6,6 +6,10 @@
 	margin: 0;
 }
 
+.button {
+	margin: auto;
+}
+
 .card-image .image.is-128x128 {
 	margin: auto;
 }
@@ -17,7 +21,7 @@ input:read-only {
 }
 
 .zi50 {
-	z-index: 50;
+	z-index: 2;
 }
 
 thead tr{
@@ -32,8 +36,6 @@ tbody tr{
 	text-align: center;
 	
 }
-
-
 
 .doubleBtn {
 	max-height: 0px;
@@ -52,6 +54,7 @@ tbody tr{
 }
 
 
-.navbar {
+#navbarBasicExample {
 	z-index: 100;
 }
+

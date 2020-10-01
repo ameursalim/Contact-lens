@@ -17,16 +17,17 @@
 </thead> 
 <tbody>
 {{#each user}}
-<tr>
- 
-<td>{{this.username}}</td>
-<td>{{this.email}}</td>
-<td>{{this.telephone}}</td>
-<td align="center"><a href="/admin/profile/{{this._id}}" ><i class="fas fa-user "></i></a></td>
-<td align="center"><a href="/admin/orders/{{this._id}}"><i class="fas fa-shopping-cart"></i></a></td>
-</tr>
-</tbody>
+{{#hideAdmin this.role}}
+  <tr> 
+    <td>{{this.username}}</td>
+    <td>{{this.email}}</td>
+    <td>{{this.telephone}}</td>
+    <td align="center"><a href="/admin/profile/{{this._id}}" ><i class="fas fa-user "></i></a></td>
+    <td align="center"><a href="/admin/orders/{{this._id}}"><i class="fas fa-shopping-cart"></i></a></td>
+  </tr>
+  {{/hideAdmin}}
 {{/each}}
+</tbody>
 </table>
 </div>
 </div>
