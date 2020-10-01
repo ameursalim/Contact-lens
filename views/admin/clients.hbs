@@ -18,11 +18,12 @@
 <tbody>
 {{#each user}}
 <tr>
+ 
 <td>{{this.username}}</td>
 <td>{{this.email}}</td>
 <td>{{this.telephone}}</td>
-<td><a href="/admin/profile/{{this._id}}">GO to profile</a></td>
-<td><a href="/admin/orders/{{this._id}}">GO to orders</a></td>
+<td align="center"><a href="/admin/profile/{{this._id}}" ><i class="fas fa-user "></i></a></td>
+<td align="center"><a href="/admin/orders/{{this._id}}"><i class="fas fa-shopping-cart"></i></a></td>
 </tr>
 </tbody>
 {{/each}}
