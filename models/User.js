@@ -10,7 +10,7 @@ const userSchema = new Schema({
   address: { type: String, default: 'please provide an address' },
   telephone: { type: String, default: 'please provide a telephone number' },
   info: {
-    id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
+    id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens", default:'5f7700be57a61e001ead27b7' },
     frequency : { type:String, enum :["daily","weekly","monthly"], default: "daily" },
     reminder : { type: String, default: Date.now },
     delivered : { type: Boolean, default: false },
