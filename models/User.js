@@ -13,7 +13,7 @@ const userSchema = new Schema({
     id_ContactLens: { type: Schema.Types.ObjectId, ref: "Lens" },
     frequency : { type:String, enum :["daily","weekly","monthly"], default: "daily" },
     reminder : { type: String, default: Date.now },
-    delivered : { type: Boolean, default: false},
+    delivered : { type: Boolean, default: false },
     carteVitale: { type: String, default: 'please provide your securiy card number'},
     mutuelle : { type: String, default: 'please provide your complementary insurance number'},
     ordonnance: { type: String, default: '#'},
