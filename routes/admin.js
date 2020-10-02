@@ -134,6 +134,15 @@ router.get('/profile/:id', async function(req, res, next) {
   }
 });
 
+router.get('/deleteU/:id', protectedAdminRoute, async (req, res, next) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id)
+    res.redirect('/admin/clients')
+  } catch (error) {
+    console.error(error)
+  }
+})
+
 router.get('/orders/:id', async function(req, res, next) {
   try {
     const user = await User.findById( req.params.id ).populate("info.id_ContactLens") 

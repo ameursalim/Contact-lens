@@ -62,7 +62,7 @@ router.post('/edit/:id', protectedUserRoute, fileUploader.single('ordonnance'), 
 router.get('/delete/:id', protectedUserRoute, async (req, res, next) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id)
-    res.redirect('/auth/signup')
+    res.redirect('/auth/logout')
   } catch (error) {
     console.error(error)
   }

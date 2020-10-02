@@ -142,7 +142,7 @@
 </section>
 <section class="section delete-profile">
 	<div class="box has-background-danger">
-		<form class="form has-text-centered" action="/{{#if isAdmin}}admin{{/if}}{{#if isUser}}user{{/if}}/delete/{{user._id}}" method="GET">
+		<form class="form has-text-centered" action="/{{#if isAdmin}}admin/deleteU/{{/if}}{{#if isUser}}user/delete/{{/if}}{{user._id}}" method="GET">
 			<button class="button is-danger">💀 Delete profile 💀</button>
 		</form>
 	</div>
