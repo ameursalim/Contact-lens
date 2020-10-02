@@ -1,7 +1,7 @@
 <section class="section mb50">
 	<div class="columns mt150">
 		<div class="column">
-			<img src="{{user.info.id_ContactLens.img}}" alt="acuvue box">
+			<img id="preview" src="{{user.info.id_ContactLens.img}}" alt="acuvue box">
 		</div>
 		<div class="column">
 			<button class="button is-warning is-pulled-right shower zi50">
@@ -21,9 +21,9 @@
 						<select id="lens" name="info.id_ContactLens" class="selection" disabled="true">
 							{{#each lenses}}
 								{{#areTheSame this.id ../user.info.id_ContactLens._id}}
-							<option value="{{this._id}}" selected>{{this.brand}}</option>
+							<option value="{{this._id}}" data-src="{{this.img}}" selected>{{this.brand}}</option>
 								{{else}}
-							<option value="{{this._id}}">{{this.brand}}</option>
+							<option value="{{this._id}}" data-src="{{this.img}}">{{this.brand}}</option>
 								{{/areTheSame}}
 							{{/each}}
 						</select>

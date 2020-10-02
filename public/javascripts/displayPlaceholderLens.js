@@ -2,7 +2,6 @@ const placeholderContainer = document.getElementById('placeholderContainerlens')
 const output = document.getElementById('output')
 
 const loadFile = e => {
-	console.log('changed')
 	placeholderContainer.innerHTML = ''
 	const image = document.createElement('img')
 	image.classList.add('image')

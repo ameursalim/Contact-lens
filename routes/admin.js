@@ -150,7 +150,10 @@ router.get('/orders/:id', async function(req, res, next) {
         user, 
         lenses, 
         frequency, 
-        js: ['btnEdit'] 
+        js: [
+          'btnEdit',
+          'imgPreview'
+        ] 
       });
   } catch (error) {
     console.error(error)

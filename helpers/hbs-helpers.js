@@ -14,7 +14,7 @@ hbs.registerHelper('areTheSame', function (val1, val2, options){
 })
 
 hbs.registerHelper("formatDateInput", function (date) {
-	return dayjs(date).format("YYYY-MM-DD");
+	return dayjs(new Date(date)).format("YYYY-MM-DD");
 });
 
 hbs.registerHelper("formatDate", function (date) {
