@@ -20,6 +20,17 @@ input:read-only {
 	color: #363636;
 }
 
+.select select[disabled] {
+	border: none;
+	padding: 0;
+	color: #363636;
+	background-color: white;
+}
+
+.select[disabled]:not(.is-multiple):not(.is-loading)::after {
+	border: none;
+}
+
 .zi50 {
 	z-index: 2;
 }
@@ -98,4 +109,8 @@ tbody tr:hover{
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+}
+
+.mb50 {
+	margin-bottom: 50px;
 }

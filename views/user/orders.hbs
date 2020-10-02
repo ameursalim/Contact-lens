@@ -1,5 +1,5 @@
-<section class="section">
-	<div class="columns">
+<section class="section mb50">
+	<div class="columns mt150">
 		<div class="column">
 			<img src="{{user.info.id_ContactLens.img}}" alt="acuvue box">
 		</div>
@@ -15,10 +15,10 @@
 
 				<!-- Select Basic -->
 				<div class="field">
-				<label class="label" for="lens">Select lens</label>
+				<label class="label" for="lens">Your lenses</label>
 				<div class="control">
 					<div class="select">
-						<select id="lens" name="info.id_ContactLens" class="selection">
+						<select id="lens" name="info.id_ContactLens" class="selection" disabled="true">
 							{{#each lenses}}
 								{{#areTheSame this.id ../user.info.id_ContactLens._id}}
 							<option value="{{this._id}}" selected>{{this.brand}}</option>
@@ -36,7 +36,7 @@
 				<label class="label" for="frequency">What frequency?</label>
 				<div class="control">
 					<div class="select">
-						<select id="frequency" name="info.frequency" class="">
+						<select id="frequency" name="info.frequency" class="selection" disabled="true">
 						{{#each frequency}}
 						<option 
 							value="{{this}}"
@@ -113,7 +113,7 @@
 			</form>
 		</div>
 	</div>
-</section>
 
+</section>
 
 
