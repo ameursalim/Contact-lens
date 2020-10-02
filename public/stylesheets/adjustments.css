@@ -101,7 +101,7 @@ tbody tr:hover{
 }
 
 .mg-100{
-	margin-top: 50px;
+	margin-top: 60px;
 	
 	
 }
@@ -138,4 +138,8 @@ tbody tr:hover{
 }
 .mg-top{
 	margin-top: 100px;
+}
+
+.mg-top2{
+	margin-top:50px	;
 }
