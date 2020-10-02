@@ -27,7 +27,7 @@ router.get("/addProduct", protectedAdminRoute, async (req, res, next) => {
   
   res.render("admin/addProduct", {
     lenses: lenses,
-    js:['displayPlaceholderlens']
+    js:['displayPlaceholderLens']
   });
 } catch (error) {
   next(error);
