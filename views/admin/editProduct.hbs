@@ -2,7 +2,7 @@
 
 
   <div class="container">
-    <div class="columns is-desktop is-vcentered">
+    <div class="columns is-desktop is-centered placeholderContainerlens">
       <div class="column is-6-desktop"><img src="{{lens.img}}" alt=""></div>
       
 	  <div class="column is-6-desktop">
@@ -42,7 +42,7 @@
 						<label class="label" for="img">upload your ordonnance</label>
 						<div class="file">
 						<label class="file-label">
-							<input class="file-input" type="file" name="img" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
+							<input id="output" class="file-input" type="file" name="img" onchange="if (this.files.length > 0) document.getElementById('filename-ordonnance').innerHTML = this.files[0].name;">
 							<span class="file-cta">
 							<span class="file-icon">
 								<i class="fa fa-upload"></i>
