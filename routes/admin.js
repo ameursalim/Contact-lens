@@ -70,7 +70,7 @@ router.post("/addProduct", protectedAdminRoute, fileUploader.single('img'), asyn
       // console.log(LensesrId)
       const lens=  await Lens.findById(LensesrId,req.body);
   
-      res.render("admin/editProduct",{lens});
+      res.render("admin/editProduct",{lens, js:['displayPlaceholderLens']});
     } catch (error) {
       next(error);
     }
