@@ -25,10 +25,17 @@ input:read-only {
 	padding: 0;
 	color: #363636;
 	background-color: white;
+	z-index: 5;
 }
 
-.select[disabled]:not(.is-multiple):not(.is-loading)::after {
-	border: none;
+select:disabled {
+    opacity: 1;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: #3273dc;
+    right: 1.125em;
+    z-index: 1;
 }
 
 .zi50 {
