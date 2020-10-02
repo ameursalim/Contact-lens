@@ -68,15 +68,15 @@ tbody tr:hover{
 .flex {
 	display: flex;
 	flex-direction: row;
-
+	align-items: center;
 	justify-content: center;
 	
 
 }
-.section{
+/* .section{
 	margin-bottom: 200px;
 
-}
+} */
 .hero{
 	margin-top: 150px;
 	margin-bottom: 75px;
@@ -97,5 +97,9 @@ tbody tr:hover{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
+
+}
+
+.minh{
+	min-height: 90vh;
 }

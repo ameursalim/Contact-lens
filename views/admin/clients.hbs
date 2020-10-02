@@ -1,6 +1,6 @@
 
 
-<section class="section mg-100 container-lens" >
+<section class="section   minh flex" >
 
 <div class="container">
   <div class="card">
@@ -12,7 +12,7 @@
   <th>EMAIL</th>
   <th>PHONE</th>
   <th>USER PROFILE</th>
-  <th>Orders</th>
+  <th>REMINDER</th>
   </tr>
 </thead> 
 <tbody>
@@ -23,7 +23,7 @@
     <td>{{this.email}}</td>
     <td>{{this.telephone}}</td>
     <td align="center"><a href="/admin/profile/{{this._id}}" ><i class="fas fa-user "></i></a></td>
-    <td align="center"><a href="/admin/orders/{{this._id}}"><i class="fas fa-shopping-cart"></i></a></td>
+    <td align="center"><a href="/admin/orders/{{this._id}}"><i class="fas fa-clock"></i></a></td>
   </tr>
   {{/hideAdmin}}
 {{/each}}
