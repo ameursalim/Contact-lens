@@ -101,7 +101,7 @@ tbody tr:hover{
 }
 
 .mg-100{
-	margin-top: 100px;
+	margin-top: 50px;
 	
 	
 }
@@ -125,4 +125,17 @@ tbody tr:hover{
 
 .minh{
 	min-height: 90vh;
+}
+.rond{
+	width: 100px;
+	height: 100px;
+	background-color: rgb(2, 210, 178) ;
+	border-radius: 50%;
+}
+
+.minh2{
+	min-height: 70vh;	
+}
+.mg-top{
+	margin-top: 100px;
 }
